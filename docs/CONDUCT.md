@@ -62,7 +62,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
-[INSERT CONTACT METHOD].
+my email here efsa95@gmail.com.
 All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
@@ -114,24 +114,6 @@ individual, or aggression toward or disparagement of classes of individuals.
 **Consequence**: A permanent ban from any sort of public interaction within the
 community.
 
-## Attribution
-
-This Code of Conduct is adapted from the [Contributor Covenant][homepage],
-version 2.1, available at
-[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
-
-Community Impact Guidelines were inspired by
-[Mozilla's code of conduct enforcement ladder][Mozilla CoC].
-
-For answers to common questions about this code of conduct, see the FAQ at
-[https://www.contributor-covenant.org/faq][FAQ]. Translations are available at
-[https://www.contributor-covenant.org/translations][translations].
-
-[homepage]: https://www.contributor-covenant.org
-[v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
-[Mozilla CoC]: https://github.com/mozilla/diversity
-[FAQ]: https://www.contributor-covenant.org/faq
-[translations]: https://www.contributor-covenant.org/translations
 
 ## Meetings
 * 305Soft policy of no distracted use use technology (e.g. phones away) during all team meetings.
@@ -144,7 +126,8 @@ For answers to common questions about this code of conduct, see the FAQ at
 * In order to enforce rules if a member is not holding themselves accountable group members will step in and if nothing is done restrictions of user permissions will be placed on accounts to disallow them access to source code for resume use.
 
 ## Signiture links:
->>> [Type Name Here](Copy google drive link here)
->>> [Type Name Here](Copy google drive link here)
->>> [Type Name Here](Copy google drive link here)
->>> [Type Name Here](Copy google drive link here)
+<!-- Don not remove []'s and ()'s!!! -->
+[Type Name Here](Copy google drive link here)
+[Type Name Here](Copy google drive link here)
+[Type Name Here](Copy google drive link here)
+[Type Name Here](Copy google drive link here)
