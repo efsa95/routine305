@@ -1,6 +1,16 @@
 
 # Contributor Covenant Code of Conduct
 
+## Meetings
+* 305Soft policy of no distracted use use technology (e.g. phones away) during all team meetings.
+* Meetings are 15mins during lab time
+* Attendence is mandatory unless inclement weater, health reasons, or familial issues arise.  Note if weather conditions dont allow in person we will meet in a teams/zoom call
+* Decisions are made by the scrum master initaially but with group input can be discussed and changed during meetings
+* Each meber will have three dedicated minutes to state what was finished and what they are struggling with
+* Note taker is assigned by scrum master initially, Sully is declared note taker for now.
+* Late policy: The meeting will be on hold until all members are present(or in zoom call) and in the event 10 minutes passing without communication the meeting will commence and late members will need to meet/video call to be updated.  Late araivals will be recorded.
+* In order to enforce rules if a member is not holding themselves accountable group members will step in and if nothing is done restrictions of user permissions will be placed on accounts to disallow them access to source code for resume use.
+
 ## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in our
@@ -114,16 +124,6 @@ individual, or aggression toward or disparagement of classes of individuals.
 **Consequence**: A permanent ban from any sort of public interaction within the
 community.
 
-
-## Meetings
-* 305Soft policy of no distracted use use technology (e.g. phones away) during all team meetings.
-* Meetings are 15mins during lab time
-* Attendence is mandatory unless inclement weater, health reasons, or familial issues arise.  Note if weather conditions dont allow in person we will meet in a teams/zoom call
-* Decisions are made by the scrum master initaially but with group input can be discussed and changed during meetings
-* Each meber will have three dedicated minutes to state what was finished and what they are struggling with
-* Note taker is assigned by scrum master initially, Sully is declared note taker for now.
-* Late policy: The meeting will be on hold until all members are present(or in zoom call) and in the event 10 minutes passing without communication the meeting will commence and late members will need to meet/video call to be updated.  Late araivals will be recorded.
-* In order to enforce rules if a member is not holding themselves accountable group members will step in and if nothing is done restrictions of user permissions will be placed on accounts to disallow them access to source code for resume use.
 
 ## Signiture links:
 <!-- Don not remove []'s and ()'s!!! -->
