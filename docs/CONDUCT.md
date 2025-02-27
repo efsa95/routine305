@@ -127,7 +127,7 @@ community.
 
 ## Signiture links:
 <!-- Don not remove []'s and ()'s!!! -->
-[Sullivan Cummins]((https://drive.google.com/file/d/1-D9Bi03UJphHczV2SVW77n0iWdanaTEW/view?usp=sharing))
+[Sullivan Cummins](https://drive.google.com/file/d/1-D9Bi03UJphHczV2SVW77n0iWdanaTEW/view?usp=sharing)
 [Type Name Here](Copy google drive link here)
 [Type Name Here](Copy google drive link here)
 [Type Name Here](Copy google drive link here)
