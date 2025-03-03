@@ -15,6 +15,16 @@ The survey results indicate that the majority of respondents support the idea of
 ## Supporting Data: 
 52.2% (12/23 responses) agreed with the leader board idea rating at a 4/5. 21.7% (5/23 responses) agreed with the leader board idea giving it a 5/5 rating. This results in 17/23 people (73.9% of peopele) finding this to be a very postive idea within our app. 
 ## Team Action (if any):
+<!--Mason-->
+# Observation 3: AI-Powered Food Tracking
+## Observation Statement:  
+Users were very supportive of having a food tracker where they can take a picture and have nutrition information, including calories, automatically added into the application. 
+
+## Supporting Data:  
+Many participants expressed interest in a food tracking without needing to manually enter nutritional details. The main competitor mentioned was Cronometer, which relies on users manually inputting food labels and searching for matching products. We could have an advantage here because as long as the user has access to their food label, they can get precise and exact information knowing that the information is exactly the product that they consumed and not something similar or falsely inputted based on inpropper user submissions. 
+
+## Team Action (if any):  
+We should make sure that the AI food label scanning feature is accurate and easy to use. Additionally, we could think about the possibility of integrating barcode scanning for packaged foods as an additional method for convencience and where nutrition information is not available. We need to test and see how things will turn out based on our first few prototypes before optimizing or expanding further.
 <!--Sully-->
 # Observation 4:
 ## Observation Statement: 
