@@ -8,13 +8,22 @@ for me this is a huge surprise since I find AI very intrusive in our life.  Sinc
 
 ## Team Action (if any):
 As stated previously we will be going forward with our AI integration features including building workout routines and giving general workout advice.  I think the option to disable these features would be a good options.
+
 <!--Anthony-->
 # Observation 2: Leader Board
-## Observation Statement: 
-The survey results indicate that the majority of respondents support the idea of a leader board where friends can view each other's progress. This suggests that users value social engagement and friendly competition as a motivational factor in tracking their progress.
-## Supporting Data: 
-52.2% (12/23 responses) agreed with the leader board idea rating at a 4/5. 21.7% (5/23 responses) agreed with the leader board idea giving it a 5/5 rating. This results in 17/23 people (73.9% of peopele) finding this to be a very postive idea within our app. 
-## Team Action (if any):
+## Observation Statement:  
+The survey results indicate that the majority of respondents support the idea of a leaderboard where friends can view each other's progress. This suggests that users value social engagement and friendly competition as a motivational factor in tracking their progress.
+## Supporting Data:  
+- 52.2% (12/23 responses) agreed with the leaderboard idea, rating it a 4/5.  
+- 21.7% (5/23 responses) agreed with the leaderboard idea, giving it a 5/5 rating.  
+- This results in 17/23 people (73.9%) finding this to be a very positive idea within our app.  
+- With this being said, we will integrate this into our app in the near future.  
+## Team Action (if any):  
+- We will proceed with our initial plan as a team to implement the leaderboard feature.  
+- The survey results confirm that this is a highly desired feature, reinforcing our decision to integrate it.  
+- Implementation will be straightforward, as our team envisions a simple leaderboard system.  
+- The design will be modeled after familiar leaderboard structures, similar to the one found in **Clash of Clans**.  
+
 <!--Mason-->
 # Observation 3: AI-Powered Food Tracking
 ## Observation Statement:  
