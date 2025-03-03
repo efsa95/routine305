@@ -5,14 +5,9 @@
 ## Supporting Data:
 ## Team Action (if any):
 <!--Anthony-->
-# Observation 2:
-## Observation Statement:
-## Supporting Data:
-## Team Action (if any):
-<!--Mason-->
-# Observation 3:
-## Observation Statement:
-## Supporting Data:
+# Observation 2: Leader Board
+## Observation Statement: The survey results indicate that the majority of respondents support the idea of a leaderboard where friends can view each other's progress. This suggests that users value social engagement and friendly competition as a motivational factor in tracking their progress.
+## Supporting Data: 52.2% (12/23 responses) agreed with the leader board idea rating at a 4/5. 21.7% (5/23 responses) agreed with the leader board idea giving it a 5/5 rating. This results in 17/23 people (73.9% of peopele) finding this to be a very postive idea within our app. 
 ## Team Action (if any):
 <!--Sully-->
 # Observation 4:
