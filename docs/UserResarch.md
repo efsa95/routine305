@@ -1,9 +1,13 @@
-<!-- Template -->
 <!--Elijah-->
-# Observation 1:
-## Observation Statement:
-## Supporting Data:
+# Observation 1: 
+## Observation Statement: 
+Majority likes the AI integration
+## Supporting Data: 
+Both questions pertaining AI are positive toward having AI judge their workouts and in general are comfortable with it being integrated. 
+for me this is a huge surprise since I find AI very intrusive in our life.  Since the general public (our class) likes it we should continue with those features. 
+
 ## Team Action (if any):
+As stated previously we will be going forward with our AI integration features including building workout routines and giving general workout advice.  I think the option to disable these features would be a good options.
 <!--Anthony-->
 # Observation 2: Leader Board
 ## Observation Statement: The survey results indicate that the majority of respondents support the idea of a leader board where friends can view each other's progress. This suggests that users value social engagement and friendly competition as a motivational factor in tracking their progress.
