@@ -1,6 +1,7 @@
 # [Heart Framework](https://docs.google.com/presentation/d/1sFD5LBsgFg1o2OLPEOdqMxO5248AhKwhmHrn1zC6zEc/edit?usp=sharing)
 
 <!-- DIRECTIONS: Read section 8 and everyone must add to this document and make a commit-->
+See [Section 8.5](https://learn.zybooks.com/zybook/URICSC305Spring2025/chapter/8/section/5) for more directions.
 
 #### NPS
 #### Adoption
