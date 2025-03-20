@@ -3,6 +3,7 @@
 See [Section 8.5](https://learn.zybooks.com/zybook/URICSC305Spring2025/chapter/8/section/5) for more directions.
 
 #### NPS
+    - A pop up will display after each first workout of the week is completed asking the user to rate their experience on a scale of 1-10. This is logged in the backend in Firebase.
 #### Adoption
     - Account is created and is tracked through the create account button.  once authentication is set up the next action sends to google analytics.
 #### Daily Active Users
