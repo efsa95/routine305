@@ -12,6 +12,11 @@ See [Section 8.5](https://learn.zybooks.com/zybook/URICSC305Spring2025/chapter/8
     - Firebase is notified when user attempts to create a workout but decides not to finish
 #### Retention 
 #### CTR for an event on the Golden Path. This is done with Firebase Analytics custom event.
+
+####Task Success
+    - Firebase logs when a user starts but doesn’t finish a workout creation.
+    - Helps identify where users drop off during the creation process.
+    
 <!-- At least one other metric specific to your app. Example : 
     Average number of new ToDo tasks created per active user (those who login) each day reported daily for the past month; 
     this is a way to measure the extent to which users are actually using the app. -->
