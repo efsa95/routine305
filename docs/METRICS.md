@@ -13,7 +13,7 @@ See [Section 8.5](https://learn.zybooks.com/zybook/URICSC305Spring2025/chapter/8
 #### Retention 
 #### CTR for an event on the Golden Path. This is done with Firebase Analytics custom event.
 
-####Task Success
+#### Task Success
     - Firebase logs when a user starts but doesn’t finish a workout creation.
     - Helps identify where users drop off during the creation process.
     
