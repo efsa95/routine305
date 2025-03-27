@@ -10,6 +10,9 @@ See [Section 8.5](https://learn.zybooks.com/zybook/URICSC305Spring2025/chapter/8
     - Firebase is notified when a workout is started 
     - Firebase is notified when a newly created workout is started for the first time
     - Firebase is notified when user attempts to create a workout but decides not to finish
+    - Firebase is notified each time a user logs a workout
+    - Firebase is notified by how many consecutive days a user logs a workout
+    - Firebase is notified if a user returns after 3, 7, or 14 days of inactivity.
 #### Retention 
 #### CTR for an event on the Golden Path. This is done with Firebase Analytics custom event.
 
