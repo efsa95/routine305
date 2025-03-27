@@ -19,6 +19,8 @@ See [Section 8.5](https://learn.zybooks.com/zybook/URICSC305Spring2025/chapter/8
 #### Task Success
     - Firebase logs when a user starts but doesn’t finish a workout creation.
     - Helps identify where users drop off during the creation process.
+    - Firebase identifies when a user starts creating a workout vs. when they successfully save it.
+    - Firebase identifies if a user exits the workout creation screen without saving or if an error occurs.
     
 <!-- At least one other metric specific to your app. Example : 
     Average number of new ToDo tasks created per active user (those who login) each day reported daily for the past month; 
