@@ -2,12 +2,14 @@
 See [zybook 8.8](https://learn.zybooks.com/zybook/URICSC305Spring2025/chapter/8/section/8) for directions.
 
 # Elijah
-### A/B Test Name: 
-### User Story Number: 
+### A/B Test Name: Simple UI
+### User Story Number: 13
 ### Metrics:  
-### Hypothesis: 
-### Experiment:
-### Variations:
+  - Engagement: Useres actually start a workout, which can be tracked easily by seeing when a user actually logs something
+  - Retention: Users will spend less time on main page and more time working out
+### Hypothesis:  busy UI like the one we have will cause people to decide to just not use our app
+### Experiment:  Keeps the same UI for 50% of our useres and designe a new UI that has less options, only containing create a workout and start a workout.
+### Variations:  Maximalist page with all info vs Minimal UI with two options
 
 # Sully
 ### A/B Test Name: Progress Message - "X Workouts Toward Goal" vs. "Keep Going! X Workouts Logged"
