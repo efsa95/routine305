@@ -40,9 +40,11 @@ Keep the current post-workout screen (just “Workout Logged”) for 50% of user
 
 
 # Anthony
-### A/B Test Name: 
-### User Story Number: 
+### A/B Test Name: SIMPLE UI
+### User Story Number: 14
 ### Metrics:  
-### Hypothesis: 
-### Experiment:
-### Variations:
+- Engagement: Users interact more with the habit tracker by logging habits consistently and viewing progress
+- Retention: Users return to the app more frequently to maintain streaks and earn achievement badges.
+### Hypothesis: A visually engaging habit tracker with streaks and achievement badges will increase motivation and consistency compared to a simple checkbox tracker
+### Experiment: 50% of users will use the current habit tracker with basic checkboxes, while the other 50% will have access to a redesigned version featuring progress visualization, streaks, and badges
+### Variations: Basic checkbox tracker vs. Gamified tracker with streaks and achievement badges
