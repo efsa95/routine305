@@ -20,8 +20,8 @@ See [zybook 8.8](https://learn.zybooks.com/zybook/URICSC305Spring2025/chapter/8/
 - Retention: Percentage of users who return to the app within a week of seeing the message.
 ### Hypothesis: 
 If we change the progress message from "You are now X workouts toward your weekly goal" to "Keep Going! X Workouts Logged," then users will be more motivated to continue logging workouts, leading to increased engagement and retention.
-### Experiment:
-### Variations:
+### Experiment: Use one message for 50% of the users, and one message for the other 50% and track how that impacts retention, and the users reaching their goals.
+### Variations: "You are now X workouts toward your weekly goal" vs "Keep Going! X Workouts Logged"
 
 # Mason
 ### A/B Test Name: Post-Workout Summary Screen: With Progress vs No Progress
