@@ -24,12 +24,20 @@ If we change the progress message from "You are now X workouts toward your weekl
 ### Variations:
 
 # Mason
-### A/B Test Name: 
-### User Story Number: 
-### Metrics:  
-### Hypothesis: 
+### A/B Test Name: Post-Workout Summary Screen: With Progress vs No Progress
+### User Story Number: US4 (Workout Tracking)
+### Metrics:
+- Engagement: Number of workouts logged per user after seeing the summary.
+- Satisfaction: User perception of progress and motivation (if collected through feedback or ratings).
+### Hypothesis:
+If users see a small progress summary after each workout (e.g., “You lifted 3% more than last time”), they will feel more accomplished and motivated, which will lead to increased workout logging and better retention.
 ### Experiment:
+Keep the current post-workout screen (just “Workout Logged”) for 50% of users (Group A). Show the other 50% (Group B) a simple progress message after they log a workout (e.g., “+5 lbs from last time” or “3% more volume today”). Use Firebase Remote Config to control the variation, and Firebase Analytics to track workout logs and CTA taps.
 ### Variations:
+- Variation A: Plain confirmation screen after workout logging.
+- Variation B: Confirmation screen with personalized progress summary (e.g., “+5 lbs since last workout”).
+
+
 
 # Anthony
 ### A/B Test Name: 
