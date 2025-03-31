@@ -46,5 +46,5 @@ Keep the current post-workout screen (just “Workout Logged”) for 50% of user
 - Engagement: Users interact more with the habit tracker by logging habits consistently and viewing progress
 - Retention: Users return to the app more frequently to maintain streaks and earn achievement badges.
 ### Hypothesis: A visually engaging habit tracker with streaks and achievement badges will increase motivation and consistency compared to a simple checkbox tracker
-### Experiment: 50% of users will use the current habit tracker with basic checkboxes, while the other 50% will have access to a redesigned version featuring progress visualization, streaks, and badges
+### Experiment: Keep the existing checkbox-based habit tracker for one half of users, while the other half will have access to a redesigned habit tracker with visual progress, streaks, and achievement badges
 ### Variations: Basic checkbox tracker vs. Gamified tracker with streaks and achievement badges
