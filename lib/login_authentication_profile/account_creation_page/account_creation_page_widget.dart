@@ -115,6 +115,7 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                               text: 'Signup',
                             ),
                             Tab(
+                              key: ValueKey('LoginTab_2xl7'),
                               text: 'Login',
                             ),
                           ],
@@ -324,6 +325,8 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                                 Container(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key:
+                                        ValueKey('Signup-ConfirmPassword_1g2d'),
                                     controller: _model
                                         .signupConfirmPasswordTextController,
                                     focusNode:
@@ -422,6 +425,7 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                                 Container(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key: ValueKey('Login-Email_goqq'),
                                     controller: _model.loginEmailTextController,
                                     focusNode: _model.loginEmailFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
@@ -518,6 +522,7 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                                 Container(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key: ValueKey('Login-Password_1qiv'),
                                     controller:
                                         _model.loginPasswordTextController,
                                     focusNode: _model.loginPasswordFocusNode,

@@ -50,7 +50,7 @@ void main() async {
         find.byKey(const ValueKey('Signup-Password_j3mb')), 'password');
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(
-        find.byKey(const ValueKey('Signup-Email_v84z')), 'password');
+        find.byKey(const ValueKey('Signup-ConfirmPassword_1g2d')), 'password');
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.tap(find.byKey(const ValueKey('Signup-Button_lsmf')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
@@ -59,7 +59,30 @@ void main() async {
     await tester.tap(find.byKey(const ValueKey('DropDown_mrxs')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.tap(find.byKey(const ValueKey('Button_k7kz')));
-    expect(find.byKey(const ValueKey('Text_n4lj')), findsOneWidget);
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+  });
+
+  testWidgets('US2 - User Login', (WidgetTester tester) async {
+    _overrideOnError();
+
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: const MyApp(),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.tap(find.byKey(const ValueKey('LoginTab_2xl7')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.enterText(
+        find.byKey(const ValueKey('Login-Email_goqq')), 'scummins@uri.edu');
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.enterText(
+        find.byKey(const ValueKey('Login-Password_1qiv')), 'password');
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.tap(find.byKey(const ValueKey('Signup-Button_lsmf')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    expect(find.byKey(const ValueKey('Text_n4lj')), findsWidgets);
   });
 }
 
