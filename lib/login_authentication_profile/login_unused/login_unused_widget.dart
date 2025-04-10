@@ -2,29 +2,30 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'login_model.dart';
-export 'login_model.dart';
+import 'login_unused_model.dart';
+export 'login_unused_model.dart';
 
-class LoginWidget extends StatefulWidget {
-  const LoginWidget({super.key});
+class LoginUnusedWidget extends StatefulWidget {
+  const LoginUnusedWidget({super.key});
 
-  static String routeName = 'Login';
-  static String routePath = '/login';
+  static String routeName = 'LoginUnused';
+  static String routePath = '/loginUnused';
 
   @override
-  State<LoginWidget> createState() => _LoginWidgetState();
+  State<LoginUnusedWidget> createState() => _LoginUnusedWidgetState();
 }
 
-class _LoginWidgetState extends State<LoginWidget> {
-  late LoginModel _model;
+class _LoginUnusedWidgetState extends State<LoginUnusedWidget> {
+  late LoginUnusedModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LoginModel());
+    _model = createModel(context, () => LoginUnusedModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'LoginUnused'});
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 

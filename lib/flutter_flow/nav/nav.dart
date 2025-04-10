@@ -72,20 +72,21 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
+GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
+    GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? MainPageWidget()
+          ? entryPage ?? MainPageWidget()
           : AccountCreationPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? MainPageWidget()
+              ? entryPage ?? MainPageWidget()
               : AccountCreationPageWidget(),
         ),
         FFRoute(
@@ -99,9 +100,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MainPageWidget(),
         ),
         FFRoute(
-          name: LoginWidget.routeName,
-          path: LoginWidget.routePath,
-          builder: (context, params) => LoginWidget(),
+          name: LoginUnusedWidget.routeName,
+          path: LoginUnusedWidget.routePath,
+          builder: (context, params) => LoginUnusedWidget(),
         ),
         FFRoute(
           name: TimerWidget.routeName,
@@ -112,6 +113,39 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: OnboardingWidget.routeName,
           path: OnboardingWidget.routePath,
           builder: (context, params) => OnboardingWidget(),
+        ),
+        FFRoute(
+          name: WorkoutDashboardWidget.routeName,
+          path: WorkoutDashboardWidget.routePath,
+          builder: (context, params) => WorkoutDashboardWidget(),
+        ),
+        FFRoute(
+          name: SubmitWorkoutWidget.routeName,
+          path: SubmitWorkoutWidget.routePath,
+          builder: (context, params) => SubmitWorkoutWidget(
+            repsForCurrent: params.getParam(
+              'repsForCurrent',
+              ParamType.String,
+            ),
+            weight: params.getParam(
+              'weight',
+              ParamType.String,
+            ),
+            isVisible: params.getParam(
+              'isVisible',
+              ParamType.bool,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ExerciseEditPageWidget.routeName,
+          path: ExerciseEditPageWidget.routePath,
+          builder: (context, params) => ExerciseEditPageWidget(
+            workoutPageName: params.getParam(
+              'workoutPageName',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -30,6 +30,8 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
     super.initState();
     _model = createModel(context, () => AccountCreationPageModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'AccountCreationPage'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
@@ -82,7 +84,7 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
                     'assets/images/Screenshot_2025-03-17_223136.png',
-                    width: 120.0,
+                    width: MediaQuery.sizeOf(context).width * 0.3,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -132,6 +134,7 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                                 Container(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key: ValueKey('Signup-Email_v84z'),
                                     controller:
                                         _model.signupEmailTextController,
                                     focusNode: _model.signupEmailFocusNode,
@@ -229,6 +232,7 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                                 Container(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key: ValueKey('Signup-Password_j3mb'),
                                     controller:
                                         _model.signupPasswordTextController,
                                     focusNode: _model.signupPasswordFocusNode,
@@ -614,6 +618,9 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                     if (_model.tabBarCurrentIndex == 1)
                       FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'ACCOUNT_CREATION_Login-Button_ON_TAP');
+                          logFirebaseEvent('Login-Button_auth');
                           GoRouter.of(context).prepareAuthEvent();
 
                           final user = await authManager.signInWithEmail(
@@ -649,7 +656,11 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                       ),
                     if (_model.tabBarCurrentIndex == 0)
                       FFButtonWidget(
+                        key: ValueKey('Signup-Button_lsmf'),
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'ACCOUNT_CREATION_Signup-Button_ON_TAP');
+                          logFirebaseEvent('Signup-Button_auth');
                           GoRouter.of(context).prepareAuthEvent();
                           if (_model.signupPasswordTextController.text !=
                               _model.signupConfirmPasswordTextController.text) {
@@ -672,10 +683,20 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                             return;
                           }
 
-                          context.goNamedAuth(
-                              MainPageWidget.routeName, context.mounted);
+                          logFirebaseEvent(
+                              'Signup-Button_google_analytics_event');
+                          logFirebaseEvent(
+                            'createAccountBut',
+                            parameters: {
+                              'Param 1': 'CreateBut',
+                            },
+                          );
+                          logFirebaseEvent('Signup-Button_navigate_to');
+
+                          context.pushNamedAuth(
+                              OnboardingWidget.routeName, context.mounted);
                         },
-                        text: 'Sign up',
+                        text: getRemoteConfigString('SignupButtonText'),
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 40.0,

@@ -26,6 +26,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
     super.initState();
     _model = createModel(context, () => MainPageModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'MainPage'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -49,15 +50,19 @@ class _MainPageWidgetState extends State<MainPageWidget> {
         appBar: AppBar(
           backgroundColor: Color(0xFFF1F4F8),
           automaticallyImplyLeading: false,
-          title: Text(
-            'FitForge',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Hind',
-                  color: Color(0xFF14181B),
-                  fontSize: 40.0,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
-                ),
+          title: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+            child: Text(
+              key: ValueKey('Text_n4lj'),
+              'FitForge',
+              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    fontFamily: 'Hind',
+                    color: Color(0xFF14181B),
+                    fontSize: 40.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
           ),
           actions: [],
           centerTitle: false,
@@ -109,7 +114,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                   ),
                             ),
                             Text(
-                              'You are (blank) towards your weekly goal.',
+                              getRemoteConfigString('mainpageMessageText'),
                               style: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
@@ -264,19 +269,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 1.0, 1.0, 1.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      '',
-                                      width: 70.0,
-                                      height: 100.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -354,65 +346,48 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 1.0, 1.0, 1.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      '',
-                                      width: 70.0,
-                                      height: 100.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 4.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Create new workout',
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleLarge
-                                              .override(
-                                                fontFamily: 'Outfit',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                fontSize: 22.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 0.0, 0.0),
-                                      child: Icon(
-                                        Icons.chevron_right_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        size: 24.0,
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        logFirebaseEvent(
+                                            'MAIN_PAGE_PAGE_Column_qklwmwmu_ON_TAP');
+                                        logFirebaseEvent('Column_navigate_to');
+
+                                        context.pushNamed(
+                                            WorkoutDashboardWidget.routeName);
+                                      },
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Create new workout',
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleLarge
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 22.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ],
                             ),
@@ -422,89 +397,88 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
-                        child: Container(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 100.0,
-                          decoration: BoxDecoration(
-                            color: Color(0xFF437890),
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 3.0,
-                                color: Color(0x411D2429),
-                                offset: Offset(
-                                  0.0,
-                                  1.0,
-                                ),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 1.0, 1.0, 1.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      '',
-                                      width: 70.0,
-                                      height: 100.0,
-                                      fit: BoxFit.cover,
-                                    ),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            logFirebaseEvent('MAIN_PAGE_PAGE_menuItem_ON_TAP');
+                            logFirebaseEvent('menuItem_navigate_to');
+
+                            context.pushNamed(SubmitWorkoutWidget.routeName);
+                          },
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF437890),
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 3.0,
+                                  color: Color(0x411D2429),
+                                  offset: Offset(
+                                    0.0,
+                                    1.0,
                                   ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 4.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Start workout',
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleLarge
-                                              .override(
-                                                fontFamily: 'Outfit',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                fontSize: 22.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Padding(
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 0.0, 0.0),
-                                      child: Icon(
-                                        Icons.chevron_right_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        size: 24.0,
+                                          8.0, 0.0, 4.0, 0.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Workout dashboard',
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleLarge
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 22.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ],
-                                ),
-                              ],
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 4.0, 0.0, 0.0),
+                                        child: Icon(
+                                          Icons.chevron_right_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -593,6 +567,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 16.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'MAIN_PAGE_PAGE_LogOutButton_ON_TAP');
+                          logFirebaseEvent('LogOutButton_navigate_to');
+
                           context
                               .pushNamed(AccountCreationPageWidget.routeName);
                         },

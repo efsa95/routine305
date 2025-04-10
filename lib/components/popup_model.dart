@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'login_widget.dart' show LoginWidget;
+import 'popup_widget.dart' show PopupWidget;
 import 'package:flutter/material.dart';
 
-class LoginModel extends FlutterFlowModel<LoginWidget> {
-  ///  State fields for stateful widgets in this page.
+class PopupModel extends FlutterFlowModel<PopupWidget> {
+  ///  State fields for stateful widgets in this component.
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
@@ -12,19 +12,10 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
-  late bool passwordVisibility1;
   String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  late bool passwordVisibility2;
-  String? Function(BuildContext, String?)? textController3Validator;
 
   @override
-  void initState(BuildContext context) {
-    passwordVisibility1 = false;
-    passwordVisibility2 = false;
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
@@ -33,8 +24,5 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
-
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
   }
 }

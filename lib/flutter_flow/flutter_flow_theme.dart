@@ -3,31 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:shared_preferences/shared_preferences.dart';
-
-const kThemeModeKey = '__theme_mode__';
-SharedPreferences? _prefs;
-
 abstract class FlutterFlowTheme {
-  static Future initialize() async =>
-      _prefs = await SharedPreferences.getInstance();
-  static ThemeMode get themeMode {
-    final darkMode = _prefs?.getBool(kThemeModeKey);
-    return darkMode == null
-        ? ThemeMode.system
-        : darkMode
-            ? ThemeMode.dark
-            : ThemeMode.light;
-  }
-
-  static void saveThemeMode(ThemeMode mode) => mode == ThemeMode.system
-      ? _prefs?.remove(kThemeModeKey)
-      : _prefs?.setBool(kThemeModeKey, mode == ThemeMode.dark);
-
   static FlutterFlowTheme of(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark
-        ? DarkModeTheme()
-        : LightModeTheme();
+    return LightModeTheme();
   }
 
   @Deprecated('Use primary instead')
@@ -286,32 +264,6 @@ class ThemeTypography extends Typography {
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-}
-
-class DarkModeTheme extends FlutterFlowTheme {
-  @Deprecated('Use primary instead')
-  Color get primaryColor => primary;
-  @Deprecated('Use secondary instead')
-  Color get secondaryColor => secondary;
-  @Deprecated('Use tertiary instead')
-  Color get tertiaryColor => tertiary;
-
-  late Color primary = const Color(0xFFA52A2A);
-  late Color secondary = const Color(0xFF3A3D46);
-  late Color tertiary = const Color(0xFF4A0000);
-  late Color alternate = const Color(0xFFD02323);
-  late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFFFFFFFF);
-  late Color primaryBackground = const Color(0xFF9DA2AA);
-  late Color secondaryBackground = const Color(0xFF000000);
-  late Color accent1 = const Color(0xFF150303);
-  late Color accent2 = const Color(0xFFD0D0D0);
-  late Color accent3 = const Color(0xFFFFB6C1);
-  late Color accent4 = const Color(0xFF6B8E23);
-  late Color success = const Color(0xFF4CAF50);
-  late Color warning = const Color(0xFFFF9800);
-  late Color error = const Color(0xFFF44336);
-  late Color info = const Color(0xFF2196F3);
 }
 
 extension TextStyleHelper on TextStyle {

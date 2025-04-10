@@ -1,3 +1,5 @@
+import 'package:provider/provider.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -6,7 +8,6 @@ import 'auth/firebase_auth/firebase_user_provider.dart';
 import 'auth/firebase_auth/auth_util.dart';
 
 import 'backend/firebase/firebase_config.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
 void main() async {
@@ -16,22 +17,40 @@ void main() async {
 
   await initFirebase();
 
-  await FlutterFlowTheme.initialize();
+  final appState = FFAppState(); // Initialize FFAppState
+  await appState.initializePersistedState();
 
-  runApp(MyApp());
+  await initializeFirebaseRemoteConfig();
+
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key, this.entryPage});
+
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
 
   static _MyAppState of(BuildContext context) =>
       context.findAncestorStateOfType<_MyAppState>()!;
+
+  final Widget? entryPage;
+}
+
+class MyAppScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }
 
 class _MyAppState extends State<MyApp> {
-  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
+  ThemeMode _themeMode = ThemeMode.system;
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
@@ -58,7 +77,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
 
     _appStateNotifier = AppStateNotifier.instance;
-    _router = createRouter(_appStateNotifier);
+    _router = createRouter(_appStateNotifier, widget.entryPage);
     userStream = routine305FirebaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
@@ -79,7 +98,6 @@ class _MyAppState extends State<MyApp> {
 
   void setThemeMode(ThemeMode mode) => safeSetState(() {
         _themeMode = mode;
-        FlutterFlowTheme.saveThemeMode(mode);
       });
 
   @override
@@ -87,6 +105,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'routine305',
+      scrollBehavior: MyAppScrollBehavior(),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -95,10 +114,6 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(
         brightness: Brightness.light,
-        useMaterial3: false,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
         useMaterial3: false,
       ),
       themeMode: _themeMode,
