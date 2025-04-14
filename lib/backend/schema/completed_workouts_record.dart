@@ -35,11 +35,17 @@ class CompletedWorkoutsRecord extends FirestoreRecord {
   int get completedWeight => _completedWeight ?? 0;
   bool hasCompletedWeight() => _completedWeight != null;
 
+  // "dateOfWorkout" field.
+  DateTime? _dateOfWorkout;
+  DateTime? get dateOfWorkout => _dateOfWorkout;
+  bool hasDateOfWorkout() => _dateOfWorkout != null;
+
   void _initializeFields() {
     _user = snapshotData['user'] as DocumentReference?;
     _exerciseName = snapshotData['exerciseName'] as String?;
     _completedReps = castToType<int>(snapshotData['completedReps']);
     _completedWeight = castToType<int>(snapshotData['completedWeight']);
+    _dateOfWorkout = snapshotData['dateOfWorkout'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -82,6 +88,7 @@ Map<String, dynamic> createCompletedWorkoutsRecordData({
   String? exerciseName,
   int? completedReps,
   int? completedWeight,
+  DateTime? dateOfWorkout,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -89,6 +96,7 @@ Map<String, dynamic> createCompletedWorkoutsRecordData({
       'exerciseName': exerciseName,
       'completedReps': completedReps,
       'completedWeight': completedWeight,
+      'dateOfWorkout': dateOfWorkout,
     }.withoutNulls,
   );
 
@@ -104,12 +112,18 @@ class CompletedWorkoutsRecordDocumentEquality
     return e1?.user == e2?.user &&
         e1?.exerciseName == e2?.exerciseName &&
         e1?.completedReps == e2?.completedReps &&
-        e1?.completedWeight == e2?.completedWeight;
+        e1?.completedWeight == e2?.completedWeight &&
+        e1?.dateOfWorkout == e2?.dateOfWorkout;
   }
 
   @override
-  int hash(CompletedWorkoutsRecord? e) => const ListEquality()
-      .hash([e?.user, e?.exerciseName, e?.completedReps, e?.completedWeight]);
+  int hash(CompletedWorkoutsRecord? e) => const ListEquality().hash([
+        e?.user,
+        e?.exerciseName,
+        e?.completedReps,
+        e?.completedWeight,
+        e?.dateOfWorkout
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is CompletedWorkoutsRecord;

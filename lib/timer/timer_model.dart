@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'timer_widget.dart' show TimerWidget;
 import 'package:flutter/material.dart';
@@ -21,6 +22,8 @@ class TimerModel extends FlutterFlowModel<TimerWidget> {
   int currentRepsInt = 99;
 
   int currentWeightInt = 99;
+
+  DateTime? currentTime;
 
   ///  State fields for stateful widgets in this page.
 

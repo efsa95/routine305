@@ -46,18 +46,18 @@ class _MainPageWidgetState extends State<MainPageWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFF1F4F8),
+        backgroundColor: FlutterFlowTheme.of(context).secondary,
         appBar: AppBar(
-          backgroundColor: Color(0xFFF1F4F8),
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 50.0),
             child: Text(
               key: ValueKey('Text_n4lj'),
               'FitForge',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Hind',
-                    color: Color(0xFF14181B),
+                    color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 40.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.bold,
@@ -228,10 +228,10 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                     child: Text(
-                      'Settings',
+                      'Getting Started...',
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Plus Jakarta Sans',
-                            color: Color(0xFF57636C),
+                            color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 18.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.normal,
@@ -251,7 +251,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: Color(0xFF437890),
+                            color: FlutterFlowTheme.of(context).primary,
                             boxShadow: [
                               BoxShadow(
                                 blurRadius: 3.0,
@@ -264,60 +264,57 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                             ],
                             borderRadius: BorderRadius.circular(12.0),
                           ),
-                          child: Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 4.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Nutrition',
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleLarge
-                                              .override(
-                                                fontFamily: 'Outfit',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                fontSize: 22.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Column(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Row(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 0.0, 0.0),
-                                      child: Icon(
-                                        Icons.chevron_right_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        size: 24.0,
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      child: Image.asset(
+                                        'assets/images/nutrition_icon_image.jpg',
+                                        width: 85.0,
+                                        height: 200.0,
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
-                                  ],
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 4.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Nutrition (TBD)',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleLarge
+                                                  .override(
+                                                    fontFamily: 'Outfit',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    fontSize: 22.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ].divide(SizedBox(width: 50.0)),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -328,7 +325,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: Color(0xFF437890),
+                            color: FlutterFlowTheme.of(context).primary,
                             boxShadow: [
                               BoxShadow(
                                 blurRadius: 3.0,
@@ -346,6 +343,15 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.asset(
+                                    'assets/images/workout_dash_icon.jpeg',
+                                    width: 85.0,
+                                    height: 200.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -371,7 +377,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Create new workout',
+                                            'Workout Dashboard',
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
                                                 .override(
@@ -389,7 +395,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                     ),
                                   ),
                                 ),
-                              ],
+                              ].divide(SizedBox(width: 50.0)),
                             ),
                           ),
                         ),
@@ -412,7 +418,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 100.0,
                             decoration: BoxDecoration(
-                              color: Color(0xFF437890),
+                              color: FlutterFlowTheme.of(context).primary,
                               boxShadow: [
                                 BoxShadow(
                                   blurRadius: 3.0,
@@ -430,6 +436,15 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Image.asset(
+                                      'assets/images/start_workout_icon.jpg',
+                                      width: 85.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -442,7 +457,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Workout dashboard',
+                                            'Start Workout',
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
                                                 .override(
@@ -459,25 +474,87 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       ),
                                     ),
                                   ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: Icon(
-                                          Icons.chevron_right_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          size: 24.0,
-                                        ),
-                                      ),
-                                    ],
+                                ].divide(SizedBox(width: 50.0)),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 12.0, 16.0, 0.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            logFirebaseEvent('MAIN_PAGE_PAGE_menuItem_ON_TAP');
+                            logFirebaseEvent('menuItem_navigate_to');
+
+                            context.pushNamed(RunTrackerWidget.routeName);
+                          },
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).primary,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 3.0,
+                                  color: Color(0x411D2429),
+                                  offset: Offset(
+                                    0.0,
+                                    1.0,
                                   ),
-                                ],
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Image.asset(
+                                      'assets/images/run_icon.jpg',
+                                      width: 85.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 0.0, 4.0, 0.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Run Tracker',
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleLarge
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 22.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(width: 50.0)),
                               ),
                             ),
                           ),
@@ -485,79 +562,73 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
-                    child: Text(
-                      'Your latest workout',
-                      style: FlutterFlowTheme.of(context).titleMedium.override(
-                            fontFamily: 'Plus Jakarta Sans',
-                            color: Color(0xFF57636C),
-                            fontSize: 18.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.normal,
-                          ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 44.0),
-                    child: ListView(
-                      padding: EdgeInsets.zero,
-                      primary: false,
-                      shrinkWrap: true,
-                      scrollDirection: Axis.vertical,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 0.0),
-                          child: Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Color(0xFF437890),
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 7.0,
-                                  color: Color(0x2F1D2429),
-                                  offset: Offset(
-                                    0.0,
-                                    3.0,
+                  Align(
+                    alignment: AlignmentDirectional(0.0, -1.0),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FFButtonWidget(
+                            onPressed: () async {
+                              logFirebaseEvent(
+                                  'MAIN_WorkoutHistoryButton_ON_TAP');
+                              logFirebaseEvent(
+                                  'WorkoutHistoryButton_navigate_to');
+
+                              context.pushNamed(ProgressPageWidget.routeName);
+                            },
+                            text: 'Workout History',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Inter Tight',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
-                                )
-                              ],
+                              elevation: 0.0,
                               borderRadius: BorderRadius.circular(8.0),
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.all(12.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 8.0, 0.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [],
-                                    ),
+                          ),
+                          FFButtonWidget(
+                            onPressed: () async {
+                              logFirebaseEvent(
+                                  'MAIN_PAGE_PAGE_RunHistoryButton_ON_TAP');
+                              logFirebaseEvent('RunHistoryButton_navigate_to');
+
+                              context
+                                  .pushNamed(RunProgressPageWidget.routeName);
+                            },
+                            text: 'Run History',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Inter Tight',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [],
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [],
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
-                        ),
-                      ],
+                        ].divide(SizedBox(width: 20.0)),
+                      ),
                     ),
                   ),
                   Align(
@@ -581,7 +652,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                               16.0, 0.0, 16.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFF437890),
+                          color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Inter Tight',

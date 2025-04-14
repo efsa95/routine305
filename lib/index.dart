@@ -12,3 +12,7 @@ export '/workout_creation/workout_dashboard/workout_dashboard_widget.dart'
 export '/submit_workout/submit_workout_widget.dart' show SubmitWorkoutWidget;
 export '/workout_creation/exercise_edit_page/exercise_edit_page_widget.dart'
     show ExerciseEditPageWidget;
+export '/run_tracker/run_tracker_widget.dart' show RunTrackerWidget;
+export '/run_progress_page/run_progress_page_widget.dart'
+    show RunProgressPageWidget;
+export '/progress_page/progress_page_widget.dart' show ProgressPageWidget;

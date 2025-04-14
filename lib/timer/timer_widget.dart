@@ -5,11 +5,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'timer_model.dart';
 export 'timer_model.dart';
 
@@ -41,12 +43,16 @@ class _TimerWidgetState extends State<TimerWidget> {
       _model.queriedCurrentWorkout = await queryCurrentWorkoutRecordOnce(
         singleRecord: true,
       ).then((s) => s.firstOrNull);
+      logFirebaseEvent('timer_update_app_state');
+      FFAppState().currentDate = getCurrentTimestamp;
+      safeSetState(() {});
       logFirebaseEvent('timer_update_page_state');
       _model.currentWorkoutDocRef = _model.queriedCurrentWorkout?.reference;
       _model.currentDocumentObj = _model.queriedCurrentWorkout;
       logFirebaseEvent('timer_update_page_state');
       _model.currentRepsInt = _model.currentDocumentObj!.reps;
       _model.currentWeightInt = _model.currentDocumentObj!.weightAmount;
+      _model.currentTime = _model.currentTime;
       safeSetState(() {});
         });
 
@@ -66,6 +72,8 @@ class _TimerWidgetState extends State<TimerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return StreamBuilder<List<CurrentWorkoutRecord>>(
       stream: queryCurrentWorkoutRecord(
         queryBuilder: (currentWorkoutRecord) => currentWorkoutRecord.where(
@@ -602,8 +610,39 @@ class _TimerWidgetState extends State<TimerWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 24.0, 0.0, 44.0),
                                   child: FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'TIMER_PAGE_COMPLETE_WORKOUT_BTN_ON_TAP');
+                                      logFirebaseEvent(
+                                          'Button_update_app_state');
+
+                                      safeSetState(() {});
+                                      if (_model.currentWorkoutDocRef != null) {
+                                        logFirebaseEvent('Button_backend_call');
+
+                                        await CompletedWorkoutsRecord.collection
+                                            .doc()
+                                            .set(
+                                                createCompletedWorkoutsRecordData(
+                                              user: currentUserReference,
+                                              exerciseName: _model
+                                                  .currentDocumentObj
+                                                  ?.workoutName,
+                                              completedReps:
+                                                  _model.currentRepsInt,
+                                              completedWeight:
+                                                  _model.currentWeightInt,
+                                            ));
+                                      } else {
+                                        logFirebaseEvent(
+                                            'Button_navigate_back');
+                                        context.safePop();
+                                      }
+
+                                      logFirebaseEvent('Button_navigate_to');
+
+                                      context.pushNamed(
+                                          ProgressPageWidget.routeName);
                                     },
                                     text: 'Complete Workout',
                                     options: FFButtonOptions(

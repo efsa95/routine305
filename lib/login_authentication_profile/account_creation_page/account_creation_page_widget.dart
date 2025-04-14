@@ -81,7 +81,7 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(24.0),
                   child: Image.asset(
                     'assets/images/Screenshot_2025-03-17_223136.png',
                     width: MediaQuery.sizeOf(context).width * 0.3,
@@ -220,6 +220,8 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                           letterSpacing: 0.0,
                                         ),
                                     keyboardType: TextInputType.emailAddress,
@@ -313,6 +315,8 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                           letterSpacing: 0.0,
                                         ),
                                     cursorColor: FlutterFlowTheme.of(context)
@@ -408,6 +412,8 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                           letterSpacing: 0.0,
                                         ),
                                     cursorColor: FlutterFlowTheme.of(context)
@@ -509,6 +515,8 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                           letterSpacing: 0.0,
                                         ),
                                     keyboardType: TextInputType.emailAddress,
@@ -601,6 +609,8 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                           letterSpacing: 0.0,
                                         ),
                                     cursorColor: FlutterFlowTheme.of(context)
@@ -622,6 +632,7 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                   children: [
                     if (_model.tabBarCurrentIndex == 1)
                       FFButtonWidget(
+                        key: ValueKey('Login-Button'),
                         onPressed: () async {
                           logFirebaseEvent(
                               'ACCOUNT_CREATION_Login-Button_ON_TAP');
@@ -638,7 +649,8 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                           }
 
                           context.goNamedAuth(
-                              MainPageWidget.routeName, context.mounted);
+                              AccountCreationPageWidget.routeName,
+                              context.mounted);
                         },
                         text: 'Login',
                         options: FFButtonOptions(

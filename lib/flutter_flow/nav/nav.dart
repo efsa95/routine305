@@ -79,14 +79,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? entryPage ?? MainPageWidget()
+          ? entryPage ?? AccountCreationPageWidget()
           : AccountCreationPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? entryPage ?? MainPageWidget()
+              ? entryPage ?? AccountCreationPageWidget()
               : AccountCreationPageWidget(),
         ),
         FFRoute(
@@ -146,6 +146,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: RunTrackerWidget.routeName,
+          path: RunTrackerWidget.routePath,
+          builder: (context, params) => RunTrackerWidget(),
+        ),
+        FFRoute(
+          name: RunProgressPageWidget.routeName,
+          path: RunProgressPageWidget.routePath,
+          builder: (context, params) => RunProgressPageWidget(),
+        ),
+        FFRoute(
+          name: ProgressPageWidget.routeName,
+          path: ProgressPageWidget.routePath,
+          builder: (context, params) => ProgressPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
