@@ -80,7 +80,7 @@ void main() async {
     await tester.enterText(
         find.byKey(const ValueKey('Login-Password_1qiv')), 'password');
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    await tester.tap(find.byKey(const ValueKey('Signup-Button_lsmf')));
+    await tester.tap(find.byKey(const ValueKey('Login-Button')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     expect(find.byKey(const ValueKey('Text_n4lj')), findsWidgets);
   });
