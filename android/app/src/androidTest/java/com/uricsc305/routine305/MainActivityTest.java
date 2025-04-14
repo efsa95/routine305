@@ -1,4 +1,4 @@
-package com.mycompany.routine305;
+package com.uricsc305.routine305;
 
 import androidx.test.rule.ActivityTestRule;
 import dev.flutter.plugins.integration_test.FlutterTestRunner;

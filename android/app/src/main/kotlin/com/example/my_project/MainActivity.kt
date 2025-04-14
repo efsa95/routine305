@@ -1,4 +1,4 @@
-package com.mycompany.routine305
+package com.uricsc305.routine305
 
 import io.flutter.embedding.android.FlutterActivity
 

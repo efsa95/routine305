@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.routine305</string>
+	<string>com.uricsc305.routine305</string>
 	<key>PROJECT_ID</key>
 	<string>routine305</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:81329824072:ios:7102de18d211f0ab60537d</string>
+	<string>1:81329824072:ios:1fdd3a7677988ee560537d</string>
 </dict>
 </plist>
