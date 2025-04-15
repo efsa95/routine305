@@ -115,6 +115,7 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                               text: 'Signup',
                             ),
                             Tab(
+                              key: ValueKey('LoginTab_2xl7'),
                               text: 'Login',
                             ),
                           ],
@@ -655,7 +656,7 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                         text: 'Login',
                         options: FFButtonOptions(
                           width: double.infinity,
-                          height: 40.0,
+                          height: 60.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
