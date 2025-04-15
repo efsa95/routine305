@@ -72,9 +72,9 @@ void main() async {
     await GoogleFonts.pendingFonts();
 
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    await tester.tap(find.byKey(const ValueKey('LoginTab_2xl7')));
+    await tester.tap(find.byKey(const ValueKey('AccountCreationPage_x4ey')));
     await tester.pump(kDoubleTapMinTime);
-    await tester.tap(find.byKey(const ValueKey('LoginTab_2xl7')));
+    await tester.tap(find.byKey(const ValueKey('AccountCreationPage_x4ey')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(
         find.byKey(const ValueKey('Login-Email_goqq')), 'scummins@uri.edu');
@@ -82,9 +82,9 @@ void main() async {
     await tester.enterText(
         find.byKey(const ValueKey('Login-Password_1qiv')), 'password');
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    await tester.tap(find.byKey(const ValueKey('Login-Button')));
+    await tester.tap(find.byKey(const ValueKey('AccountCreationPage_x4ey')));
     await tester.pumpAndSettle(const Duration(milliseconds: 10000));
-    expect(find.byKey(const ValueKey('Text_n4lj')), findsWidgets);
+    expect(find.byKey(const ValueKey('Text_jtyt')), findsWidgets);
   });
 }
 

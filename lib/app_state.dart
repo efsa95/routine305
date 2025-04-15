@@ -44,21 +44,21 @@ class FFAppState extends ChangeNotifier {
     _currentDate = value;
   }
 
-  int _currentDay = 0;
-  int get currentDay => _currentDay;
-  set currentDay(int value) {
+  String _currentDay = '';
+  String get currentDay => _currentDay;
+  set currentDay(String value) {
     _currentDay = value;
   }
 
-  int _currentMonth = 0;
-  int get currentMonth => _currentMonth;
-  set currentMonth(int value) {
+  String _currentMonth = '';
+  String get currentMonth => _currentMonth;
+  set currentMonth(String value) {
     _currentMonth = value;
   }
 
-  int _currentWeek = 0;
-  int get currentWeek => _currentWeek;
-  set currentWeek(int value) {
+  String _currentWeek = '';
+  String get currentWeek => _currentWeek;
+  set currentWeek(String value) {
     _currentWeek = value;
   }
 }

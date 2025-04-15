@@ -40,12 +40,30 @@ class CompletedWorkoutsRecord extends FirestoreRecord {
   DateTime? get dateOfWorkout => _dateOfWorkout;
   bool hasDateOfWorkout() => _dateOfWorkout != null;
 
+  // "currentDay" field.
+  String? _currentDay;
+  String get currentDay => _currentDay ?? '';
+  bool hasCurrentDay() => _currentDay != null;
+
+  // "currentWeek" field.
+  String? _currentWeek;
+  String get currentWeek => _currentWeek ?? '';
+  bool hasCurrentWeek() => _currentWeek != null;
+
+  // "currentMonth" field.
+  String? _currentMonth;
+  String get currentMonth => _currentMonth ?? '';
+  bool hasCurrentMonth() => _currentMonth != null;
+
   void _initializeFields() {
     _user = snapshotData['user'] as DocumentReference?;
     _exerciseName = snapshotData['exerciseName'] as String?;
     _completedReps = castToType<int>(snapshotData['completedReps']);
     _completedWeight = castToType<int>(snapshotData['completedWeight']);
     _dateOfWorkout = snapshotData['dateOfWorkout'] as DateTime?;
+    _currentDay = snapshotData['currentDay'] as String?;
+    _currentWeek = snapshotData['currentWeek'] as String?;
+    _currentMonth = snapshotData['currentMonth'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -89,6 +107,9 @@ Map<String, dynamic> createCompletedWorkoutsRecordData({
   int? completedReps,
   int? completedWeight,
   DateTime? dateOfWorkout,
+  String? currentDay,
+  String? currentWeek,
+  String? currentMonth,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -97,6 +118,9 @@ Map<String, dynamic> createCompletedWorkoutsRecordData({
       'completedReps': completedReps,
       'completedWeight': completedWeight,
       'dateOfWorkout': dateOfWorkout,
+      'currentDay': currentDay,
+      'currentWeek': currentWeek,
+      'currentMonth': currentMonth,
     }.withoutNulls,
   );
 
@@ -113,7 +137,10 @@ class CompletedWorkoutsRecordDocumentEquality
         e1?.exerciseName == e2?.exerciseName &&
         e1?.completedReps == e2?.completedReps &&
         e1?.completedWeight == e2?.completedWeight &&
-        e1?.dateOfWorkout == e2?.dateOfWorkout;
+        e1?.dateOfWorkout == e2?.dateOfWorkout &&
+        e1?.currentDay == e2?.currentDay &&
+        e1?.currentWeek == e2?.currentWeek &&
+        e1?.currentMonth == e2?.currentMonth;
   }
 
   @override
@@ -122,7 +149,10 @@ class CompletedWorkoutsRecordDocumentEquality
         e?.exerciseName,
         e?.completedReps,
         e?.completedWeight,
-        e?.dateOfWorkout
+        e?.dateOfWorkout,
+        e?.currentDay,
+        e?.currentWeek,
+        e?.currentMonth
       ]);
 
   @override

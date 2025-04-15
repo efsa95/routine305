@@ -115,7 +115,6 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                               text: 'Signup',
                             ),
                             Tab(
-                              key: ValueKey('LoginTab_2xl7'),
                               text: 'Login',
                             ),
                           ],

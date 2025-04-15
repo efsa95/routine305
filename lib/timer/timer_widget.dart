@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:collection/collection.dart';
@@ -615,7 +616,12 @@ class _TimerWidgetState extends State<TimerWidget> {
                                           'TIMER_PAGE_COMPLETE_WORKOUT_BTN_ON_TAP');
                                       logFirebaseEvent(
                                           'Button_update_app_state');
-
+                                      FFAppState().currentDay =
+                                          functions.getCurrentDay()!;
+                                      FFAppState().currentMonth =
+                                          functions.getCurrentMonth()!;
+                                      FFAppState().currentWeek =
+                                          functions.getCurrentWeek()!;
                                       safeSetState(() {});
                                       if (_model.currentWorkoutDocRef != null) {
                                         logFirebaseEvent('Button_backend_call');
