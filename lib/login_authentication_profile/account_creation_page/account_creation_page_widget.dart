@@ -648,9 +648,10 @@ class _AccountCreationPageWidgetState extends State<AccountCreationPageWidget>
                             return;
                           }
 
-                          context.goNamedAuth(
-                              AccountCreationPageWidget.routeName,
-                              context.mounted);
+                          logFirebaseEvent('Login-Button_navigate_to');
+
+                          context.pushNamedAuth(
+                              MainPageWidget.routeName, context.mounted);
                         },
                         text: 'Login',
                         options: FFButtonOptions(
