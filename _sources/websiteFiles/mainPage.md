@@ -1,29 +1,37 @@
-# Welcome to Your New Website/Portfolio Powered By Jupyterbook!
+# Welcome to Fit Forge 🏋️‍♂️🔥
 
-If you're on the Repo You can see the pinned link on the right to a preview of the website.
+Forge your fitness. Forge your future.
 
-## Directions 
+---
 
- ### Enable Write Permissions for GITHUB_TOKEN
- - Go to your GitHub repository
- - Click Settings (you'll need to be an admin).
- - On the left sidebar, go to Actions → General
- - Scroll down to Workflow permissions
- - Select ✅ Read and write permissions
- - Click Save
+## About Fit Forge
+**Fit Forge** is your personal fitness companion — designed to help you plan, track, and crush your workout goals.  
+Whether you're just starting out or pushing your limits, Fit Forge has the tools you need to build your best self.
 
-### Deploy Website from Branch
-- Go to settings and find pages on the left
-- Under Build and Deployment make the source "deploy from branch"
-- set the source to gh-pages in the root
-- If the gh-pages does does not exist you must make a commit to main and the workflow should create it automatically
-- save and make some sort of commit
-- Your website link is now in pages after you make a commit
+---
 
-### Files in the Root
-- _toc.yml is for setting file locations and captions
-- _config.yml is for author names and logos
-- See the docs [here](https://jupyterbook.org/en/stable/intro.html) for more info on customization
-- Note you may want to make this Repo **Private!** Your website will still be **public**.
+## Features
+- 🏋️ Personalized Workout Plans  
+- 📝 Daily Exercise Tracking  
+- 📈 Progress Charts and Analytics  
+- 🛠️ Custom Routine Builder  
+- 🏆 Goal Setting and Achievements  
 
-**I did not create Jupyterbook I simply made this template!**
+---
+
+## How to Get Started
+**Choose a program** — Pick from beginner, intermediate, or advanced.
+**Track your workouts** — Log sets, reps, and notes for every session.
+**Monitor your progress** — See your stats improve over time!
+**See Directons on the Right**
+
+---
+
+## Join the Forge
+Ready to level up your fitness journey?  
+**Start forging your path to greatness today!**
+
+> **“Strength does not come from winning. Your struggles forge your strength.”**
+
+---
+
