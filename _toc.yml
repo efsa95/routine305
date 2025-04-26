@@ -1,9 +1,10 @@
 format: jb-book
-root: README
+root: websiteFiles/mainPage
 parts:
-- caption: Side Option 1
+- caption: How to use the app
   chapters:
-    - file: files/sideOption1/temp1.md
-- caption: Side Option 2
+    - file: websiteFiles/directions/createWorkout.md
+    - file: websiteFiles/directions/startRun.md
+- caption: Side Option temp
   chapters:
-    - file: files/sideOption2/temp2.md
+    - file: websiteFiles/sideOption2/temp2.md
