@@ -11,4 +11,5 @@ ENTER NAMES HERE
 - the rest of the website files live in "websiteFiles" directory
 - Any time this repo is commited to the website is rebuilt 
 - See the docs [here](https://jupyterbook.org/en/stable/intro.html) for more info on customization
+- Click [here](efsa95.github.io/routine305/) to get to the website
 
