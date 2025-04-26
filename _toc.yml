@@ -1,0 +1,9 @@
+format: jb-book
+root: README
+parts:
+- caption: Side Option 1
+  chapters:
+    - file: files/sideOption1/temp1.md
+- caption: Side Option 2
+  chapters:
+    - file: files/sideOption2/temp2.md
