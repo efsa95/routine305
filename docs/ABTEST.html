@@ -1,0 +1,624 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>A/b Testing &#8212; template</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/ABTEST';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../websiteFiles/mainPage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="template - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="template - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../websiteFiles/mainPage.html">
+                    Welcome to Your New Website/Portfolio Powered By Jupyterbook!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">How to use the app</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../websiteFiles/directions/createWorkout.html">Directions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websiteFiles/directions/startRun.html">Start a Run</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Side Option temp</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../websiteFiles/sideOption2/temp2.html">Title Here 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/ABTEST.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A/b Testing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A/b Testing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#elijah">Elijah</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-test-name-simple-ui">A/B Test Name: Simple UI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-story-number-13">User Story Number: 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-busy-ui-like-the-one-we-have-will-cause-people-to-decide-to-just-not-use-our-app">Hypothesis:  busy UI like the one we have will cause people to decide to just not use our app</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-keeps-the-same-ui-for-50-of-our-useres-and-designe-a-new-ui-that-has-less-options-only-containing-create-a-workout-and-start-a-workout">Experiment:  Keeps the same UI for 50% of our useres and designe a new UI that has less options, only containing create a workout and start a workout.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variations-maximalist-page-with-all-info-vs-minimal-ui-with-two-options">Variations:  Maximalist page with all info vs Minimal UI with two options</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sully">Sully</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-test-name-progress-message-x-workouts-toward-goal-vs-keep-going-x-workouts-logged">A/B Test Name: Progress Message - “X Workouts Toward Goal” vs. “Keep Going! X Workouts Logged”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-story-number-us10-track-user-retention">User Story Number: US10 Track User Retention</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Metrics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis">Hypothesis:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-use-one-message-for-50-of-the-users-and-one-message-for-the-other-50-and-track-how-that-impacts-retention-and-the-users-reaching-their-goals">Experiment: Use one message for 50% of the users, and one message for the other 50% and track how that impacts retention, and the users reaching their goals.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variations-you-are-now-x-workouts-toward-your-weekly-goal-vs-keep-going-x-workouts-logged">Variations: “You are now X workouts toward your weekly goal” vs “Keep Going! X Workouts Logged”</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mason">Mason</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-test-name-post-workout-summary-screen-with-progress-vs-no-progress">A/B Test Name: Post-Workout Summary Screen: With Progress vs No Progress</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-story-number-us4-workout-tracking">User Story Number: US4 (Workout Tracking)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Metrics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Hypothesis:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment">Experiment:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variations">Variations:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#anthony">Anthony</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">A/B Test Name: SIMPLE UI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-story-number-14">User Story Number: 14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Metrics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-a-visually-engaging-habit-tracker-with-streaks-and-achievement-badges-will-increase-motivation-and-consistency-compared-to-a-simple-checkbox-tracker">Hypothesis: A visually engaging habit tracker with streaks and achievement badges will increase motivation and consistency compared to a simple checkbox tracker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-keep-the-existing-checkbox-based-habit-tracker-for-one-half-of-users-while-the-other-half-will-have-access-to-a-redesigned-habit-tracker-with-visual-progress-streaks-and-achievement-badges">Experiment: Keep the existing checkbox-based habit tracker for one half of users, while the other half will have access to a redesigned habit tracker with visual progress, streaks, and achievement badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variations-basic-checkbox-tracker-vs-gamified-tracker-with-streaks-and-achievement-badges">Variations: Basic checkbox tracker vs. Gamified tracker with streaks and achievement badges</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-b-testing">
+<h1>A/b Testing<a class="headerlink" href="#a-b-testing" title="Permalink to this heading">#</a></h1>
+<p>See <a class="reference external" href="https://learn.zybooks.com/zybook/URICSC305Spring2025/chapter/8/section/8">zybook 8.8</a> for directions.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="elijah">
+<h1>Elijah<a class="headerlink" href="#elijah" title="Permalink to this heading">#</a></h1>
+<section id="a-b-test-name-simple-ui">
+<h2>A/B Test Name: Simple UI<a class="headerlink" href="#a-b-test-name-simple-ui" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="user-story-number-13">
+<h2>User Story Number: 13<a class="headerlink" href="#user-story-number-13" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="metrics">
+<h2>Metrics:<a class="headerlink" href="#metrics" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Engagement: Useres actually start a workout, which can be tracked easily by seeing when a user actually logs something</p></li>
+<li><p>Retention: Users will spend less time on main page and more time working out</p></li>
+</ul>
+</section>
+<section id="hypothesis-busy-ui-like-the-one-we-have-will-cause-people-to-decide-to-just-not-use-our-app">
+<h2>Hypothesis:  busy UI like the one we have will cause people to decide to just not use our app<a class="headerlink" href="#hypothesis-busy-ui-like-the-one-we-have-will-cause-people-to-decide-to-just-not-use-our-app" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="experiment-keeps-the-same-ui-for-50-of-our-useres-and-designe-a-new-ui-that-has-less-options-only-containing-create-a-workout-and-start-a-workout">
+<h2>Experiment:  Keeps the same UI for 50% of our useres and designe a new UI that has less options, only containing create a workout and start a workout.<a class="headerlink" href="#experiment-keeps-the-same-ui-for-50-of-our-useres-and-designe-a-new-ui-that-has-less-options-only-containing-create-a-workout-and-start-a-workout" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="variations-maximalist-page-with-all-info-vs-minimal-ui-with-two-options">
+<h2>Variations:  Maximalist page with all info vs Minimal UI with two options<a class="headerlink" href="#variations-maximalist-page-with-all-info-vs-minimal-ui-with-two-options" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sully">
+<h1>Sully<a class="headerlink" href="#sully" title="Permalink to this heading">#</a></h1>
+<section id="a-b-test-name-progress-message-x-workouts-toward-goal-vs-keep-going-x-workouts-logged">
+<h2>A/B Test Name: Progress Message - “X Workouts Toward Goal” vs. “Keep Going! X Workouts Logged”<a class="headerlink" href="#a-b-test-name-progress-message-x-workouts-toward-goal-vs-keep-going-x-workouts-logged" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="user-story-number-us10-track-user-retention">
+<h2>User Story Number: US10 Track User Retention<a class="headerlink" href="#user-story-number-us10-track-user-retention" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id1">
+<h2>Metrics:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Happiness: User-reported satisfaction with tracking their progress (if feedback is collected).</p></li>
+<li><p>Engagement: Number of users who log at least one additional workout after seeing the message.</p></li>
+<li><p>Retention: Percentage of users who return to the app within a week of seeing the message.</p></li>
+</ul>
+</section>
+<section id="hypothesis">
+<h2>Hypothesis:<a class="headerlink" href="#hypothesis" title="Permalink to this heading">#</a></h2>
+<p>If we change the progress message from “You are now X workouts toward your weekly goal” to “Keep Going! X Workouts Logged,” then users will be more motivated to continue logging workouts, leading to increased engagement and retention.</p>
+</section>
+<section id="experiment-use-one-message-for-50-of-the-users-and-one-message-for-the-other-50-and-track-how-that-impacts-retention-and-the-users-reaching-their-goals">
+<h2>Experiment: Use one message for 50% of the users, and one message for the other 50% and track how that impacts retention, and the users reaching their goals.<a class="headerlink" href="#experiment-use-one-message-for-50-of-the-users-and-one-message-for-the-other-50-and-track-how-that-impacts-retention-and-the-users-reaching-their-goals" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="variations-you-are-now-x-workouts-toward-your-weekly-goal-vs-keep-going-x-workouts-logged">
+<h2>Variations: “You are now X workouts toward your weekly goal” vs “Keep Going! X Workouts Logged”<a class="headerlink" href="#variations-you-are-now-x-workouts-toward-your-weekly-goal-vs-keep-going-x-workouts-logged" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mason">
+<h1>Mason<a class="headerlink" href="#mason" title="Permalink to this heading">#</a></h1>
+<section id="a-b-test-name-post-workout-summary-screen-with-progress-vs-no-progress">
+<h2>A/B Test Name: Post-Workout Summary Screen: With Progress vs No Progress<a class="headerlink" href="#a-b-test-name-post-workout-summary-screen-with-progress-vs-no-progress" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="user-story-number-us4-workout-tracking">
+<h2>User Story Number: US4 (Workout Tracking)<a class="headerlink" href="#user-story-number-us4-workout-tracking" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id2">
+<h2>Metrics:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Engagement: Number of workouts logged per user after seeing the summary.</p></li>
+<li><p>Satisfaction: User perception of progress and motivation (if collected through feedback or ratings).</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>Hypothesis:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>If users see a small progress summary after each workout (e.g., “You lifted 3% more than last time”), they will feel more accomplished and motivated, which will lead to increased workout logging and better retention.</p>
+</section>
+<section id="experiment">
+<h2>Experiment:<a class="headerlink" href="#experiment" title="Permalink to this heading">#</a></h2>
+<p>Keep the current post-workout screen (just “Workout Logged”) for 50% of users (Group A). Show the other 50% (Group B) a simple progress message after they log a workout (e.g., “+5 lbs from last time” or “3% more volume today”). Use Firebase Remote Config to control the variation, and Firebase Analytics to track workout logs and CTA taps.</p>
+</section>
+<section id="variations">
+<h2>Variations:<a class="headerlink" href="#variations" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Variation A: Plain confirmation screen after workout logging.</p></li>
+<li><p>Variation B: Confirmation screen with personalized progress summary (e.g., “+5 lbs since last workout”).</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="anthony">
+<h1>Anthony<a class="headerlink" href="#anthony" title="Permalink to this heading">#</a></h1>
+<section id="id4">
+<h2>A/B Test Name: SIMPLE UI<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="user-story-number-14">
+<h2>User Story Number: 14<a class="headerlink" href="#user-story-number-14" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id5">
+<h2>Metrics:<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Engagement: Users interact more with the habit tracker by logging habits consistently and viewing progress</p></li>
+<li><p>Retention: Users return to the app more frequently to maintain streaks and earn achievement badges.</p></li>
+</ul>
+</section>
+<section id="hypothesis-a-visually-engaging-habit-tracker-with-streaks-and-achievement-badges-will-increase-motivation-and-consistency-compared-to-a-simple-checkbox-tracker">
+<h2>Hypothesis: A visually engaging habit tracker with streaks and achievement badges will increase motivation and consistency compared to a simple checkbox tracker<a class="headerlink" href="#hypothesis-a-visually-engaging-habit-tracker-with-streaks-and-achievement-badges-will-increase-motivation-and-consistency-compared-to-a-simple-checkbox-tracker" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="experiment-keep-the-existing-checkbox-based-habit-tracker-for-one-half-of-users-while-the-other-half-will-have-access-to-a-redesigned-habit-tracker-with-visual-progress-streaks-and-achievement-badges">
+<h2>Experiment: Keep the existing checkbox-based habit tracker for one half of users, while the other half will have access to a redesigned habit tracker with visual progress, streaks, and achievement badges<a class="headerlink" href="#experiment-keep-the-existing-checkbox-based-habit-tracker-for-one-half-of-users-while-the-other-half-will-have-access-to-a-redesigned-habit-tracker-with-visual-progress-streaks-and-achievement-badges" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="variations-basic-checkbox-tracker-vs-gamified-tracker-with-streaks-and-achievement-badges">
+<h2>Variations: Basic checkbox tracker vs. Gamified tracker with streaks and achievement badges<a class="headerlink" href="#variations-basic-checkbox-tracker-vs-gamified-tracker-with-streaks-and-achievement-badges" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A/b Testing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#elijah">Elijah</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-test-name-simple-ui">A/B Test Name: Simple UI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-story-number-13">User Story Number: 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-busy-ui-like-the-one-we-have-will-cause-people-to-decide-to-just-not-use-our-app">Hypothesis:  busy UI like the one we have will cause people to decide to just not use our app</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-keeps-the-same-ui-for-50-of-our-useres-and-designe-a-new-ui-that-has-less-options-only-containing-create-a-workout-and-start-a-workout">Experiment:  Keeps the same UI for 50% of our useres and designe a new UI that has less options, only containing create a workout and start a workout.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variations-maximalist-page-with-all-info-vs-minimal-ui-with-two-options">Variations:  Maximalist page with all info vs Minimal UI with two options</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sully">Sully</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-test-name-progress-message-x-workouts-toward-goal-vs-keep-going-x-workouts-logged">A/B Test Name: Progress Message - “X Workouts Toward Goal” vs. “Keep Going! X Workouts Logged”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-story-number-us10-track-user-retention">User Story Number: US10 Track User Retention</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Metrics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis">Hypothesis:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-use-one-message-for-50-of-the-users-and-one-message-for-the-other-50-and-track-how-that-impacts-retention-and-the-users-reaching-their-goals">Experiment: Use one message for 50% of the users, and one message for the other 50% and track how that impacts retention, and the users reaching their goals.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variations-you-are-now-x-workouts-toward-your-weekly-goal-vs-keep-going-x-workouts-logged">Variations: “You are now X workouts toward your weekly goal” vs “Keep Going! X Workouts Logged”</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mason">Mason</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-test-name-post-workout-summary-screen-with-progress-vs-no-progress">A/B Test Name: Post-Workout Summary Screen: With Progress vs No Progress</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-story-number-us4-workout-tracking">User Story Number: US4 (Workout Tracking)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Metrics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Hypothesis:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment">Experiment:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variations">Variations:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#anthony">Anthony</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">A/B Test Name: SIMPLE UI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-story-number-14">User Story Number: 14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Metrics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-a-visually-engaging-habit-tracker-with-streaks-and-achievement-badges-will-increase-motivation-and-consistency-compared-to-a-simple-checkbox-tracker">Hypothesis: A visually engaging habit tracker with streaks and achievement badges will increase motivation and consistency compared to a simple checkbox tracker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-keep-the-existing-checkbox-based-habit-tracker-for-one-half-of-users-while-the-other-half-will-have-access-to-a-redesigned-habit-tracker-with-visual-progress-streaks-and-achievement-badges">Experiment: Keep the existing checkbox-based habit tracker for one half of users, while the other half will have access to a redesigned habit tracker with visual progress, streaks, and achievement badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variations-basic-checkbox-tracker-vs-gamified-tracker-with-streaks-and-achievement-badges">Variations: Basic checkbox tracker vs. Gamified tracker with streaks and achievement badges</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By FitForge Dev Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
