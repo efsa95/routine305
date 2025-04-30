@@ -7,6 +7,7 @@ import '/workout_creation/components/add_exercise_component/add_exercise_compone
 import '/workout_creation/components/exercise_display/exercise_display_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'exercise_edit_page_model.dart';
 export 'exercise_edit_page_model.dart';
 
@@ -134,8 +135,18 @@ class _ExerciseEditPageWidgetState extends State<ExerciseEditPageWidget> {
                     'workoutName',
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Inter Tight',
+                    font: GoogleFonts.interTight(
+                      fontWeight: FlutterFlowTheme.of(context)
+                          .headlineMedium
+                          .fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                    ),
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).headlineMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                     shadows: [
                       Shadow(
                         color: FlutterFlowTheme.of(context).secondaryText,

@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -7,6 +8,7 @@ import '/workout_creation/components/create_workout_component/create_workout_com
 import '/workout_creation/components/workout_display/workout_display_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'workout_dashboard_model.dart';
 export 'workout_dashboard_model.dart';
 
@@ -124,9 +126,19 @@ class _WorkoutDashboardWidgetState extends State<WorkoutDashboardWidget> {
                 child: Text(
                   'My Workout Plans',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Inter Tight',
+                    font: GoogleFonts.interTight(
+                      fontWeight: FlutterFlowTheme.of(context)
+                          .headlineMedium
+                          .fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                    ),
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).headlineMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                     shadows: [
                       Shadow(
                         color: FlutterFlowTheme.of(context).secondaryText,
@@ -218,6 +230,14 @@ class _WorkoutDashboardWidgetState extends State<WorkoutDashboardWidget> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.0, 0.0),
+                child: FlutterFlowAdBanner(
+                  height: 50.0,
+                  showsTestAd: true,
+                  androidAdUnitID: 'ca-app-pub-4044445010415897/6605454683',
                 ),
               ),
               Padding(

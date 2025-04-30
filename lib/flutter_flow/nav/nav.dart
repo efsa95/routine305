@@ -79,20 +79,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? entryPage ?? AccountCreationPageWidget()
+          ? entryPage ?? MainPageWidget()
           : AccountCreationPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? entryPage ?? AccountCreationPageWidget()
+              ? entryPage ?? MainPageWidget()
               : AccountCreationPageWidget(),
-        ),
-        FFRoute(
-          name: AccountCreationPageWidget.routeName,
-          path: AccountCreationPageWidget.routePath,
-          builder: (context, params) => AccountCreationPageWidget(),
         ),
         FFRoute(
           name: MainPageWidget.routeName,
@@ -108,11 +103,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: TimerWidget.routeName,
           path: TimerWidget.routePath,
           builder: (context, params) => TimerWidget(),
-        ),
-        FFRoute(
-          name: OnboardingWidget.routeName,
-          path: OnboardingWidget.routePath,
-          builder: (context, params) => OnboardingWidget(),
         ),
         FFRoute(
           name: WorkoutDashboardWidget.routeName,
@@ -161,6 +151,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: ProgressPageWidget.routeName,
           path: ProgressPageWidget.routePath,
           builder: (context, params) => ProgressPageWidget(),
+        ),
+        FFRoute(
+          name: HabitsWidget.routeName,
+          path: HabitsWidget.routePath,
+          builder: (context, params) => HabitsWidget(),
+        ),
+        FFRoute(
+          name: OnboardingWidget.routeName,
+          path: OnboardingWidget.routePath,
+          builder: (context, params) => OnboardingWidget(),
+        ),
+        FFRoute(
+          name: AccountCreationPageWidget.routeName,
+          path: AccountCreationPageWidget.routePath,
+          builder: (context, params) => AccountCreationPageWidget(
+            tabBarIndex: params.getParam(
+              'tabBarIndex',
+              ParamType.int,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

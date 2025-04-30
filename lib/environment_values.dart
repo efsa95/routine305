@@ -20,8 +20,16 @@ class FFDevEnvironmentValues {
       final String response =
           await rootBundle.loadString(environmentValuesPath);
       final data = await json.decode(response);
+      _isDevOn = data['isDevOn'];
+      _googleMapsAPIKey = data['googleMapsAPIKey'];
     } catch (e) {
       print('Error loading environment values: $e');
     }
   }
+
+  bool _isDevOn = false;
+  bool get isDevOn => _isDevOn;
+
+  String _googleMapsAPIKey = '';
+  String get googleMapsAPIKey => _googleMapsAPIKey;
 }

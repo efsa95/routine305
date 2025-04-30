@@ -44,7 +44,7 @@ void main() async {
 
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(find.byKey(const ValueKey('Signup-Email_v84z')),
-        'Helloworld@gmail.com');
+        'testuser69@gmail.com');
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(
         find.byKey(const ValueKey('Signup-Password_j3mb')), 'password');
