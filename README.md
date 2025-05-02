@@ -1,15 +1,20 @@
-# Welcome to the FitForeg dev team Repo
+# FitForge Development Repository  
 
-This repo is maintained By:
-Elijah Smith-Antonides
-ENTER NAMES HERE
+## About the Project  
+This repository contains the development resources for **FitForge**, a mobile fitness application designed to help users build and maintain healthy exercise habits. FitForge is part of a **Software Engineering (CSC305)** course project, focusing on real-world software development practices, teamwork, and full-stack mobile app development.  
 
+### Key Features  
+- **Custom Workout Plans** – Create and manage personalized workout routines.  
+- **Progress Tracking** – Log and visualize fitness progress over time.  
+- **Habit Monitoring** – Track daily fitness-related habits for consistency.  
+- **Run Tracker** – Monitor distance and time for running sessions.  
+- **User-Friendly UI** – Clean and intuitive interface for seamless navigation.  
 
-### Website Directions
-- _toc.yml is for setting file locations and captions, must be in root
-- _config.yml is for author names and logos, must be in root
-- the rest of the website files live in "websiteFiles" directory
-- Any time this repo is commited to the website is rebuilt 
-- See the docs [here](https://jupyterbook.org/en/stable/intro.html) for more info on customization
-- Click [here](efsa95.github.io/routine305/) to get to the website
+### Technologies Used  
+- **Flutterflow** – Visual frontend builder for responsive UI design.  
+- **Firebase** – Backend services for authentication and analytics.  
+- **Firestore** – Cloud-hosted NoSQL database for user data storage.  
+- **Dart** – Programming language for custom app logic and functionality.  
 
+### Maintained By  
+**Elijah Smith-Antonides**  
