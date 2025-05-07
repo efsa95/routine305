@@ -90,29 +90,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
               : AccountCreationPageWidget(),
         ),
         FFRoute(
-          name: AccountCreationPageWidget.routeName,
-          path: AccountCreationPageWidget.routePath,
-          builder: (context, params) => AccountCreationPageWidget(),
-        ),
-        FFRoute(
           name: MainPageWidget.routeName,
           path: MainPageWidget.routePath,
           builder: (context, params) => MainPageWidget(),
-        ),
-        FFRoute(
-          name: LoginUnusedWidget.routeName,
-          path: LoginUnusedWidget.routePath,
-          builder: (context, params) => LoginUnusedWidget(),
-        ),
-        FFRoute(
-          name: TimerWidget.routeName,
-          path: TimerWidget.routePath,
-          builder: (context, params) => TimerWidget(),
-        ),
-        FFRoute(
-          name: OnboardingWidget.routeName,
-          path: OnboardingWidget.routePath,
-          builder: (context, params) => OnboardingWidget(),
         ),
         FFRoute(
           name: WorkoutDashboardWidget.routeName,
@@ -144,6 +124,51 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
             workoutPageName: params.getParam(
               'workoutPageName',
               ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: RunTrackerWidget.routeName,
+          path: RunTrackerWidget.routePath,
+          builder: (context, params) => RunTrackerWidget(),
+        ),
+        FFRoute(
+          name: RunProgressPageWidget.routeName,
+          path: RunProgressPageWidget.routePath,
+          builder: (context, params) => RunProgressPageWidget(),
+        ),
+        FFRoute(
+          name: LoginUnusedWidget.routeName,
+          path: LoginUnusedWidget.routePath,
+          builder: (context, params) => LoginUnusedWidget(),
+        ),
+        FFRoute(
+          name: TimerWidget.routeName,
+          path: TimerWidget.routePath,
+          builder: (context, params) => TimerWidget(),
+        ),
+        FFRoute(
+          name: ProgressPageWidget.routeName,
+          path: ProgressPageWidget.routePath,
+          builder: (context, params) => ProgressPageWidget(),
+        ),
+        FFRoute(
+          name: HabitsWidget.routeName,
+          path: HabitsWidget.routePath,
+          builder: (context, params) => HabitsWidget(),
+        ),
+        FFRoute(
+          name: OnboardingWidget.routeName,
+          path: OnboardingWidget.routePath,
+          builder: (context, params) => OnboardingWidget(),
+        ),
+        FFRoute(
+          name: AccountCreationPageWidget.routeName,
+          path: AccountCreationPageWidget.routePath,
+          builder: (context, params) => AccountCreationPageWidget(
+            tabBarIndex: params.getParam(
+              'tabBarIndex',
+              ParamType.int,
             ),
           ),
         )

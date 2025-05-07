@@ -44,7 +44,7 @@ void main() async {
 
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(find.byKey(const ValueKey('Signup-Email_v84z')),
-        'Helloworld@gmail.com');
+        'testuser69@gmail.com');
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(
         find.byKey(const ValueKey('Signup-Password_j3mb')), 'password');
@@ -73,6 +73,8 @@ void main() async {
 
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.tap(find.byKey(const ValueKey('LoginTab_2xl7')));
+    await tester.pump(kDoubleTapMinTime);
+    await tester.tap(find.byKey(const ValueKey('LoginTab_2xl7')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(
         find.byKey(const ValueKey('Login-Email_goqq')), 'scummins@uri.edu');
@@ -80,9 +82,9 @@ void main() async {
     await tester.enterText(
         find.byKey(const ValueKey('Login-Password_1qiv')), 'password');
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    await tester.tap(find.byKey(const ValueKey('Signup-Button_lsmf')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    expect(find.byKey(const ValueKey('Text_n4lj')), findsWidgets);
+    await tester.tap(find.byKey(const ValueKey('Login-Button')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 10000));
+    expect(find.byKey(const ValueKey('Text_jtyt')), findsWidgets);
   });
 }
 

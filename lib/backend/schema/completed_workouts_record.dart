@@ -35,11 +35,47 @@ class CompletedWorkoutsRecord extends FirestoreRecord {
   int get completedWeight => _completedWeight ?? 0;
   bool hasCompletedWeight() => _completedWeight != null;
 
+  // "dateOfWorkout" field.
+  DateTime? _dateOfWorkout;
+  DateTime? get dateOfWorkout => _dateOfWorkout;
+  bool hasDateOfWorkout() => _dateOfWorkout != null;
+
+  // "currentDay" field.
+  String? _currentDay;
+  String get currentDay => _currentDay ?? '';
+  bool hasCurrentDay() => _currentDay != null;
+
+  // "currentWeek" field.
+  String? _currentWeek;
+  String get currentWeek => _currentWeek ?? '';
+  bool hasCurrentWeek() => _currentWeek != null;
+
+  // "currentMonth" field.
+  String? _currentMonth;
+  String get currentMonth => _currentMonth ?? '';
+  bool hasCurrentMonth() => _currentMonth != null;
+
+  // "currentDayofMonth" field.
+  String? _currentDayofMonth;
+  String get currentDayofMonth => _currentDayofMonth ?? '';
+  bool hasCurrentDayofMonth() => _currentDayofMonth != null;
+
+  // "completedDuration" field.
+  int? _completedDuration;
+  int get completedDuration => _completedDuration ?? 0;
+  bool hasCompletedDuration() => _completedDuration != null;
+
   void _initializeFields() {
     _user = snapshotData['user'] as DocumentReference?;
     _exerciseName = snapshotData['exerciseName'] as String?;
     _completedReps = castToType<int>(snapshotData['completedReps']);
     _completedWeight = castToType<int>(snapshotData['completedWeight']);
+    _dateOfWorkout = snapshotData['dateOfWorkout'] as DateTime?;
+    _currentDay = snapshotData['currentDay'] as String?;
+    _currentWeek = snapshotData['currentWeek'] as String?;
+    _currentMonth = snapshotData['currentMonth'] as String?;
+    _currentDayofMonth = snapshotData['currentDayofMonth'] as String?;
+    _completedDuration = castToType<int>(snapshotData['completedDuration']);
   }
 
   static CollectionReference get collection =>
@@ -82,6 +118,12 @@ Map<String, dynamic> createCompletedWorkoutsRecordData({
   String? exerciseName,
   int? completedReps,
   int? completedWeight,
+  DateTime? dateOfWorkout,
+  String? currentDay,
+  String? currentWeek,
+  String? currentMonth,
+  String? currentDayofMonth,
+  int? completedDuration,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -89,6 +131,12 @@ Map<String, dynamic> createCompletedWorkoutsRecordData({
       'exerciseName': exerciseName,
       'completedReps': completedReps,
       'completedWeight': completedWeight,
+      'dateOfWorkout': dateOfWorkout,
+      'currentDay': currentDay,
+      'currentWeek': currentWeek,
+      'currentMonth': currentMonth,
+      'currentDayofMonth': currentDayofMonth,
+      'completedDuration': completedDuration,
     }.withoutNulls,
   );
 
@@ -104,12 +152,28 @@ class CompletedWorkoutsRecordDocumentEquality
     return e1?.user == e2?.user &&
         e1?.exerciseName == e2?.exerciseName &&
         e1?.completedReps == e2?.completedReps &&
-        e1?.completedWeight == e2?.completedWeight;
+        e1?.completedWeight == e2?.completedWeight &&
+        e1?.dateOfWorkout == e2?.dateOfWorkout &&
+        e1?.currentDay == e2?.currentDay &&
+        e1?.currentWeek == e2?.currentWeek &&
+        e1?.currentMonth == e2?.currentMonth &&
+        e1?.currentDayofMonth == e2?.currentDayofMonth &&
+        e1?.completedDuration == e2?.completedDuration;
   }
 
   @override
-  int hash(CompletedWorkoutsRecord? e) => const ListEquality()
-      .hash([e?.user, e?.exerciseName, e?.completedReps, e?.completedWeight]);
+  int hash(CompletedWorkoutsRecord? e) => const ListEquality().hash([
+        e?.user,
+        e?.exerciseName,
+        e?.completedReps,
+        e?.completedWeight,
+        e?.dateOfWorkout,
+        e?.currentDay,
+        e?.currentWeek,
+        e?.currentMonth,
+        e?.currentDayofMonth,
+        e?.completedDuration
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is CompletedWorkoutsRecord;
