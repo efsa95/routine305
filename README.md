@@ -3,6 +3,8 @@
 ## About the Project  
 This repository contains the development resources for **FitForge**, a mobile fitness application designed to help users build and maintain healthy exercise habits. FitForge is part of a **Software Engineering (CSC305)** course project, focusing on real-world software development practices, teamwork, and full-stack mobile app development.  
 
+![Err](groupPhoto.jpg)
+
 ### Key Features  
 - **Custom Workout Plans** – Create and manage personalized workout routines.  
 - **Progress Tracking** – Log and visualize fitness progress over time.  
@@ -18,3 +20,5 @@ This repository contains the development resources for **FitForge**, a mobile fi
 
 ### Repo Maintained By  
 **Elijah Smith-Antonides**  
+
+
