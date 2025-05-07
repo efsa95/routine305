@@ -1,32 +1,20 @@
-# routine305
+# FitForge Development Repository  
 
-A new Flutter project.
+## About the Project  
+This repository contains the development resources for **FitForge**, a mobile fitness application designed to help users build and maintain healthy exercise habits. FitForge is part of a **Software Engineering (CSC305)** course project, focusing on real-world software development practices, teamwork, and full-stack mobile app development.  
 
-## Getting Started
+### Key Features  
+- **Custom Workout Plans** – Create and manage personalized workout routines.  
+- **Progress Tracking** – Log and visualize fitness progress over time.  
+- **Habit Monitoring** – Track daily fitness-related habits for consistency.  
+- **Run Tracker** – Monitor distance and time for running sessions.  
+- **User-Friendly UI** – Clean and intuitive interface for seamless navigation.  
 
-FlutterFlow projects are built to run on the Flutter _stable_ release.
+### Technologies Used  
+- **Flutterflow** – Visual frontend builder for responsive UI design.  
+- **Firebase** – Backend services for authentication and analytics.  
+- **Firestore** – Cloud-hosted NoSQL database for user data storage.  
+- **Dart** – Programming language for custom app logic and functionality.  
 
-## Integration Tests
-
-To test on a real iOS / Android device, first connect the device and run the following command from the root of the project:
-
-```bash
-flutter test integration_test/test.dart
-```
-
-To test on a web browser, first launch `chromedriver` as follows:
-```bash
-chromedriver --port=4444
-```
-
-Then from the root of the project, run the following command:
-```bash
-flutter drive \
-  --driver=test_driver/integration_test.dart \
-  --target=integration_test/test.dart \
-  -d chrome
-```
-
-Find more information about running Flutter integration tests [here](https://docs.flutter.dev/cookbook/testing/integration/introduction#5-run-the-integration-test).
-
-Refer to this guide for instructions on running the tests on [Firebase Test Lab](https://github.com/flutter/flutter/tree/main/packages/integration_test#firebase-test-lab).
+### Maintained By  
+**Elijah Smith-Antonides**  
