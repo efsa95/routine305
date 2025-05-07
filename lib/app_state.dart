@@ -75,4 +75,10 @@ class FFAppState extends ChangeNotifier {
   set testLocation(LatLng? value) {
     _testLocation = value;
   }
+
+  String _currentDayofMonth = '';
+  String get currentDayofMonth => _currentDayofMonth;
+  set currentDayofMonth(String value) {
+    _currentDayofMonth = value;
+  }
 }

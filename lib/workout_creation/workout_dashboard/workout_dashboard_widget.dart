@@ -236,7 +236,7 @@ class _WorkoutDashboardWidgetState extends State<WorkoutDashboardWidget> {
                 alignment: AlignmentDirectional(0.0, 0.0),
                 child: FlutterFlowAdBanner(
                   height: 50.0,
-                  showsTestAd: true,
+                  showsTestAd: false,
                   androidAdUnitID: 'ca-app-pub-4044445010415897/6605454683',
                 ),
               ),

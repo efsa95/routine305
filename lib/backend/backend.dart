@@ -9,9 +9,10 @@ import 'schema/users_record.dart';
 import 'schema/workouts_record.dart';
 import 'schema/current_workout_record.dart';
 import 'schema/exercises_record.dart';
-import 'schema/completed_workouts_record.dart';
 import 'schema/completed_runs_record.dart';
 import 'schema/habits_record.dart';
+import 'schema/completed_workouts_record.dart';
+import 'schema/day_stats_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -24,9 +25,10 @@ export 'schema/users_record.dart';
 export 'schema/workouts_record.dart';
 export 'schema/current_workout_record.dart';
 export 'schema/exercises_record.dart';
-export 'schema/completed_workouts_record.dart';
 export 'schema/completed_runs_record.dart';
 export 'schema/habits_record.dart';
+export 'schema/completed_workouts_record.dart';
+export 'schema/day_stats_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -176,43 +178,6 @@ Future<List<ExercisesRecord>> queryExercisesRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query CompletedWorkoutsRecords (as a Stream and as a Future).
-Future<int> queryCompletedWorkoutsRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      CompletedWorkoutsRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<CompletedWorkoutsRecord>> queryCompletedWorkoutsRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      CompletedWorkoutsRecord.collection,
-      CompletedWorkoutsRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<CompletedWorkoutsRecord>> queryCompletedWorkoutsRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      CompletedWorkoutsRecord.collection,
-      CompletedWorkoutsRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
 /// Functions to query CompletedRunsRecords (as a Stream and as a Future).
 Future<int> queryCompletedRunsRecordCount({
   Query Function(Query)? queryBuilder,
@@ -282,6 +247,80 @@ Future<List<HabitsRecord>> queryHabitsRecordOnce({
     queryCollectionOnce(
       HabitsRecord.collection,
       HabitsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CompletedWorkoutsRecords (as a Stream and as a Future).
+Future<int> queryCompletedWorkoutsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CompletedWorkoutsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CompletedWorkoutsRecord>> queryCompletedWorkoutsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CompletedWorkoutsRecord.collection,
+      CompletedWorkoutsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CompletedWorkoutsRecord>> queryCompletedWorkoutsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CompletedWorkoutsRecord.collection,
+      CompletedWorkoutsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query DayStatsRecords (as a Stream and as a Future).
+Future<int> queryDayStatsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      DayStatsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<DayStatsRecord>> queryDayStatsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      DayStatsRecord.collection,
+      DayStatsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<DayStatsRecord>> queryDayStatsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      DayStatsRecord.collection,
+      DayStatsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

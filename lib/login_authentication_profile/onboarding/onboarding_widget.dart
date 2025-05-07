@@ -185,10 +185,11 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                   FlutterFlowTheme.of(context).secondaryText,
                               borderRadius: 20.0,
                               buttonSize: 37.0,
-                              fillColor: FlutterFlowTheme.of(context).primary,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                               icon: Icon(
                                 Icons.add_circle,
-                                color: FlutterFlowTheme.of(context).info,
+                                color: Color(0xFFA52A2A),
                                 size: 21.0,
                               ),
                               onPressed: () {
@@ -332,7 +333,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     .bodyMedium
                                     .fontStyle,
                               ),
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               fontSize: 20.0,
                               letterSpacing: 0.0,
                               fontWeight: FlutterFlowTheme.of(context)
@@ -376,8 +377,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                           color: FlutterFlowTheme.of(context).secondaryText,
                           size: 24.0,
                         ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
+                        fillColor: FlutterFlowTheme.of(context).primaryText,
                         elevation: 2.0,
                         borderColor: Colors.transparent,
                         borderWidth: 0.0,
@@ -420,7 +420,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                         EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: Color(0xFFA52A2A),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           font: GoogleFonts.interTight(
                             fontWeight: FlutterFlowTheme.of(context)
@@ -430,7 +430,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                 .titleSmall
                                 .fontStyle,
                           ),
-                          color: Colors.white,
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           fontSize: 20.0,
                           letterSpacing: 0.0,
                           fontWeight: FlutterFlowTheme.of(context)

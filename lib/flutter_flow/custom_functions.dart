@@ -64,6 +64,11 @@ LatLng? getPreviousPoint(List<LatLng>? points) {
   return points[points.length - 2]; // Return the second to last point
 }
 
+String? getCurrentDayofMonth() {
+  // create a function that returns the current day
+  return DateFormat('d').format(DateTime.now());
+}
+
 double? calculateDistance(
   LatLng? point1,
   LatLng? point2,

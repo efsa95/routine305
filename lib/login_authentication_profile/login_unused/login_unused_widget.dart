@@ -89,7 +89,8 @@ class _LoginUnusedWidgetState extends State<LoginUnusedWidget> {
                                           .displaySmall
                                           .fontStyle,
                                     ),
-                                    color: Colors.black,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
                                     fontSize: 40.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,

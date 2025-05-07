@@ -251,7 +251,7 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                 .titleLarge
                                 .fontStyle,
                           ),
-                          color: Color(0xFF161C24),
+                          color: FlutterFlowTheme.of(context).secondaryText,
                           fontSize: 22.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
@@ -292,7 +292,7 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                   width: 48.0,
                                   height: 48.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0x4C2797FF),
+                                    color: Color(0xFFA52A2A),
                                     borderRadius: BorderRadius.circular(24.0),
                                   ),
                                   child: Align(
@@ -345,7 +345,8 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                     borderRadius: BorderRadius.circular(4.0),
                                   ),
                                 ),
-                                unselectedWidgetColor: Color(0xFF636F81),
+                                unselectedWidgetColor:
+                                    FlutterFlowTheme.of(context).secondaryText,
                               ),
                               child: Checkbox(
                                 value: _model.checkboxValue1 ??= false,
@@ -394,7 +395,8 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                 },
                                 side: BorderSide(
                                   width: 2,
-                                  color: Color(0xFF636F81),
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
                                 ),
                                 activeColor: Color(0xFF2797FF),
                                 checkColor: Color(0xFFF0F5F9),
@@ -433,7 +435,7 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                   width: 48.0,
                                   height: 48.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0x4C2797FF),
+                                    color: Color(0xFFA52A2A),
                                     borderRadius: BorderRadius.circular(24.0),
                                   ),
                                   child: Align(
@@ -486,7 +488,8 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                     borderRadius: BorderRadius.circular(4.0),
                                   ),
                                 ),
-                                unselectedWidgetColor: Color(0xFF636F81),
+                                unselectedWidgetColor:
+                                    FlutterFlowTheme.of(context).secondaryText,
                               ),
                               child: Checkbox(
                                 value: _model.checkboxValue2 ??= false,
@@ -535,7 +538,8 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                 },
                                 side: BorderSide(
                                   width: 2,
-                                  color: Color(0xFF636F81),
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
                                 ),
                                 activeColor: Color(0xFF2797FF),
                                 checkColor: Color(0xFFF0F5F9),
@@ -574,7 +578,7 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                   width: 48.0,
                                   height: 48.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0x4C2797FF),
+                                    color: Color(0xFFA52A2A),
                                     borderRadius: BorderRadius.circular(24.0),
                                   ),
                                   child: Align(
@@ -627,7 +631,8 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                     borderRadius: BorderRadius.circular(4.0),
                                   ),
                                 ),
-                                unselectedWidgetColor: Color(0xFF636F81),
+                                unselectedWidgetColor:
+                                    FlutterFlowTheme.of(context).secondaryText,
                               ),
                               child: Checkbox(
                                 value: _model.checkboxValue3 ??= false,
@@ -676,7 +681,8 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                 },
                                 side: BorderSide(
                                   width: 2,
-                                  color: Color(0xFF636F81),
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
                                 ),
                                 activeColor: Color(0xFF2797FF),
                                 checkColor: Color(0xFFF0F5F9),
@@ -702,7 +708,7 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                         EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: Color(0xFFA52A2A),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           font: GoogleFonts.interTight(
                             fontWeight: FlutterFlowTheme.of(context)
@@ -712,7 +718,8 @@ class _HabitsWidgetState extends State<HabitsWidget> {
                                 .titleSmall
                                 .fontStyle,
                           ),
-                          color: Colors.white,
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           letterSpacing: 0.0,
                           fontWeight: FlutterFlowTheme.of(context)
                               .titleSmall

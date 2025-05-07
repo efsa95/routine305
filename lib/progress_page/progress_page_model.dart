@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -11,9 +12,15 @@ class ProgressPageModel extends FlutterFlowModel<ProgressPageWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Firestore Query - Query a collection] action in ProgressPage widget.
+  List<DayStatsRecord>? dailyStatsCollection;
   // State field(s) for Carousel widget.
-  CarouselSliderController? carouselController;
-  int carouselCurrentIndex = 1;
+  CarouselSliderController? carouselController1;
+  int carouselCurrentIndex1 = 1;
+
+  // State field(s) for Carousel widget.
+  CarouselSliderController? carouselController2;
+  int carouselCurrentIndex2 = 1;
 
   @override
   void initState(BuildContext context) {}

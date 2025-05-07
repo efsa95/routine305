@@ -95,16 +95,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => MainPageWidget(),
         ),
         FFRoute(
-          name: LoginUnusedWidget.routeName,
-          path: LoginUnusedWidget.routePath,
-          builder: (context, params) => LoginUnusedWidget(),
-        ),
-        FFRoute(
-          name: TimerWidget.routeName,
-          path: TimerWidget.routePath,
-          builder: (context, params) => TimerWidget(),
-        ),
-        FFRoute(
           name: WorkoutDashboardWidget.routeName,
           path: WorkoutDashboardWidget.routePath,
           builder: (context, params) => WorkoutDashboardWidget(),
@@ -146,6 +136,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: RunProgressPageWidget.routeName,
           path: RunProgressPageWidget.routePath,
           builder: (context, params) => RunProgressPageWidget(),
+        ),
+        FFRoute(
+          name: LoginUnusedWidget.routeName,
+          path: LoginUnusedWidget.routePath,
+          builder: (context, params) => LoginUnusedWidget(),
+        ),
+        FFRoute(
+          name: TimerWidget.routeName,
+          path: TimerWidget.routePath,
+          builder: (context, params) => TimerWidget(),
         ),
         FFRoute(
           name: ProgressPageWidget.routeName,
