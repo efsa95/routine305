@@ -16,5 +16,5 @@ This repository contains the development resources for **FitForge**, a mobile fi
 - **Firestore** – Cloud-hosted NoSQL database for user data storage.  
 - **Dart** – Programming language for custom app logic and functionality.  
 
-### Maintained By  
+### Repo Maintained By  
 **Elijah Smith-Antonides**  
